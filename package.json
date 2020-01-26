@@ -1,0 +1,24 @@
+{
+  "name": "acupuntura",
+  "version": "1.0.0",
+  "description": "proyecto de trabajo terminal 2",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalnevada30/acupuntura.git"
+  },
+  "keywords": [
+    "acupuntura",
+    "electron",
+    "modelo"
+  ],
+  "author": "Arturo Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalnevada30/acupuntura/issues"
+  },
+  "homepage": "https://github.com/digitalnevada30/acupuntura#readme"
+}

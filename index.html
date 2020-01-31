@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
     <title>Hello World!</title>
   </head>
   <body>
@@ -12,9 +15,16 @@
     We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
     and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
 
-    <script>
+    <br>
+
+    <button id="btnTest">Prueba</button>
+  </body>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
       // You can also require other files to run in this process
       require('./renderer.js')
     </script>
-  </body>
 </html>

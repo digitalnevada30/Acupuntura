@@ -1,41 +1,48 @@
 // Modules
 const {app, BrowserWindow} = require('electron')
 
-var express = require('express');
-var expressApp = express();
-var path = require('path');
-var bodyParser = require('body-parser');
+const express = require('express');
+const expressApp = express();
+const path = require('path');
+const bodyParser = require('body-parser');
 
-var admin = require("firebase-admin");
-var serviceAccount = require("./acupuntura-7e1bb-firebase-adminsdk-wkoc0-fdddd57b53.json");
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://acupuntura-7e1bb.firebaseio.com"
-  });
-
-const db = admin.firestore();
+const fire = require('./fire.js');
+const admJSON = require('./administradorJSON');
 
 expressApp.use(express.static(path.join(__dirname, 'public')));
 expressApp.use(bodyParser.json()); //support json encoded bodies
 expressApp.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
-expressApp.post('/example', function(req, res,next){
-  console.log('Post method');
+expressApp.post('/canales', async function(req, res,next){
+  console.log('Post method: upload channel information');
   console.log(req.body.params);
-  //res.status(200).send({OK:'Message got successfuly'});
-  
-  db.collection("users").add(req.body.params)
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        res.status(200).send({OK:'Message got successfuly'});
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-        res.status(200).send({error:'Error'});
-    });
+  var resp = await fire.addReg(req.body.params);
+  console.log(resp);
+  res.status(200).send(resp);
+});
 
+expressApp.post('/testWrite', async function(req, res){
+  console.log('Post method: upload JSON file');
+  console.log(req.body.params);
+  var resp = await admJSON.writeData(req.body.params);
+  console.log(resp);
+  res.status(200).send(resp);
+});
 
+expressApp.get('/testRead', async function(req, res){
+  console.log('Get method: Read JSON file');
+  console.log(req.query);
+  var resp = await admJSON.readData(req.query);
+  console.log(resp);
+  res.status(200).send(resp);
+});
+
+expressApp.get('/getCanal', async function(req, res){
+  console.log('Get method: read document information');
+  console.log(req.query);
+  var resp = await fire.readReg(req.query); 
+  console.log(resp);
+  res.status(200).send(resp);
 });
 
 expressApp.listen(3000, function(){
@@ -55,7 +62,7 @@ function createWindow () {
   })
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadURL('http://127.0.0.1:3000')
+  mainWindow.loadURL('http://127.0.0.1:3000/init')
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools();

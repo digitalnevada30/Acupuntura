@@ -47,3 +47,52 @@ exports.readReg = function(params){
         })
     });
 };
+
+exports.readConfig = function(){
+    return new Promise(resolve => {
+        var data;
+        db.collection('Canales').doc('config').get()
+        .then(doc => {
+            if(!doc.exists){
+                console.log('No such Document');
+                resolve({error:"No such document"});
+            }else{
+                data = doc.data();
+                data['OK'] = "data is back!";
+                console.log(data);
+                resolve(data);
+            }
+        })
+        .catch(error => {
+            console.log('Error while fetching object', err);
+            resolve({error : "Error"});
+        })
+
+    });
+};
+
+exports.uploadFile = function(documentName, info){
+    return new Promise(resolve => {
+        db.collection('Canales').doc(documentName).set(info)
+            .then(function(docRef) {
+                resolve({OK:"Message got successfuly"});
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                resolve({error:'Error'});
+            });
+    });
+}
+
+exports.uploadConfig = function(info){
+    return new Promise(resolve => {
+        db.collection('Canales').doc('config').set(info)
+            .then(function(docRef) {
+                resolve({OK:"Message got successfuly"});
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                resolve({error:'Error'});
+            });
+    });
+}

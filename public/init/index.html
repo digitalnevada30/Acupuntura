@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>First Page</title>
-</head>
-<body>
-	<h2>Select your module</h2>
-	<br>
-	<img id="imgConnection">
-	<br>
-	<button id="btnUpload">Upload information</button>
-	<br>
-	<button id="btnRead">Read Information</button>
-	<br>
-	<hr>
-	<button id="btnLocalUpload">Upload Locally</button>
-	<br>
-	<button id="btnLocalRead">Read Locally</button>
-</body>
-<script src="./../axios/axios.min.js"></script>
-<script src="./../connection/connection.js"></script>
-<script src="index.js"></script>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../css/estilo.css">
+    <title>Acupuntura</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center" style="margin-bottom: 90px;">
+        <div class="col-md-10">
+          <h1>Acupuntura</h1>
+        </div>
+        <div class="col-md-2">
+          <img id="connImage" width="20" height="20">
+        </div>
+      </div>
+      <div class="row justify-content-around">
+          <div class="col-md-4"> <!--Primer boton-->
+            <div class="row p-1">
+              <button type="button" class="btnMain btn btn-success" id="btn_edu">Módulo Educativo</button>
+            </div>
+          </div> <!--fin primer boton-->
+          <div class="col-md-4">
+            <div class="row p-1">
+              <button type="button" class="btn btn-success btnMain" id="btn_eva">Módulo Evaluativo</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script src="../jquery/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="./../axios/axios.min.js"></script>
+  <script src="index.js"></script>
 </html>

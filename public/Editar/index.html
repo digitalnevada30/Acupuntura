@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <title>Editar</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 id="titulo">Título</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 bg-dark">
+          <h3 class="text-light">Localización</h3>
+        </div>
+        <div class="col-md-8">
+          <textarea id="txtLoc" row="10" cols="100"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 bg-dark">
+          <h3 class="text-light">Función</h3>
+        </div>
+        <div class="col-md-8">
+          <textarea id="txtFun" row="10" cols="100"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 bg-dark">
+          <h3 class="text-light">Observaciones</h3>
+        </div>
+        <div class="col-md-8">
+          <textarea id="txtObs" row="10" cols="100"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 bg-dark">
+          <h3 class="text-light">Importancia</h3>
+        </div>
+        <div class="col-md-8">
+          <input type="number" id="txtImp">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btn btn-danger" id="btnBack">Regresar</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-info" id="btnSave">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../jquery/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="./../axios/axios.min.js"></script>
+  <script src="index.js"></script>
+</html>

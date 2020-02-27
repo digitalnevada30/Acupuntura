@@ -26,6 +26,10 @@ window.onload = async function(){
     else if(txtImp.value > 5) txtImp.value = 5;
   });
 
+  btnBack.addEventListener('click', e => {
+    location.replace('http://127.0.0.1:3000/Canales?name=' + canal);
+  });
+
   btnSave.addEventListener("click", e => {
     //to save we replace \n to <br>
     puntoInfo['puntos'][punto]['localizacion'] = txtLoc.value.replace(/\n/g , '<br>');

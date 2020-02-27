@@ -3,12 +3,12 @@ const fs = require('fs');
 exports.writeData = function(data){
 	return new Promise(resolve => {
 		var nombre = data['name'];
-		var datos = {
-			age: data['age'],
-			number: data['number']
-		};
-		datos = JSON.stringify(datos);
-		fs.writeFile("./Informacion/" + nombre + ".json", datos, 'utf8', function(err){
+		console.log(data['data']);
+		var datos = JSON.stringify(data['data']);
+		console.log('datos en administrador:');
+		//console.log(nombre);
+		//console.log(datos);
+		fs.writeFile("./Informacion/" + nombre, datos, 'utf8', function(err){
 			if(err){
 				console.log('An error occurred while writing JS');
 				resolve({error:"Got an error"});

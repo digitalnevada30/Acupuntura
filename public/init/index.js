@@ -6,10 +6,8 @@ window.onload=function(){
 	checkConnection(navigator.onLine);
 	comparaFecha();
 
-
 	function checkConnection(status){
-		var actualTime = Date.now()
-		console.log(actualTime);
+		let actualTime = Date.now();
 		if(status){
 			connImage.setAttribute('src', '../images/conn.png?' + actualTime);
 		}else{

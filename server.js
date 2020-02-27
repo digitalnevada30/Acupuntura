@@ -76,8 +76,34 @@ expressApp.post('/downloadFS', async function(req, res){
   console.log('Post method: download Content');
   /*THIS METHOD IS IN WARNING*/
   //download config
-  //download each file
-  res.status(200).send(resp);
+  var resp = await fire.readConfig();
+  //write the config file
+  var datos = {
+    name : 'config.json',
+    data : {
+      canales: resp['canales'],
+      fecha : resp['fecha']
+    }
+  };
+
+  var ans = await admJSON.writeData(datos);
+  if(ans['error']){
+    console.log('Ha ocurrido un error en 88');
+  }else{
+    console.log('Archivo escrito exitosamente');
+    for(let elemento in resp['canales']){
+      console.log(elemento);
+      //download each file
+      var contenido = await fire.readFile({name : elemento});
+      datos = {
+        name : resp['canales'][elemento]['archivo'],
+        data : contenido
+      };
+      ans = await admJSON.writeData(datos);
+      //write each file
+    }
+  }
+  res.status(200).send(ans);
 })
 
 expressApp.listen(3000, function(){

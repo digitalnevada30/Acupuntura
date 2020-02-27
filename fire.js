@@ -48,6 +48,27 @@ exports.readReg = function(params){
     });
 };
 
+exports.readFile = function(params){
+    return new Promise(resolve => {
+        var data;
+        db.collection('Canales').doc(params['name']).get()
+        .then(doc => {
+            if(!doc.exists){
+                console.log('No such Document');
+                resolve({error:"No such document"});
+            }else{
+                data = doc.data();
+                console.log('Document ' + params['name'] + ' was downloaded successfully');
+                resolve(data);
+            }
+        })
+        .catch(error => {
+            console.log('Error while fetching object', error);
+            resolve({error : "Error"});
+        })
+    });
+}
+
 exports.readConfig = function(){
     return new Promise(resolve => {
         var data;
@@ -64,7 +85,7 @@ exports.readConfig = function(){
             }
         })
         .catch(error => {
-            console.log('Error while fetching object', err);
+            console.log('Error while fetching object', error);
             resolve({error : "Error"});
         })
 

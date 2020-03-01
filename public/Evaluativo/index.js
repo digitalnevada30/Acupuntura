@@ -1,7 +1,18 @@
 window.onload=function(){
-	let btnMain=document.getElementById('btnMain')
+	let btnModelo = document.getElementById('btnModelo');
+	let btnJuego = document.getElementById('btnJuego');
+	let btnRegresar = document.getElementById('btnRegresar');
 
-	btnMain.addEventListener("click", e=>{
+
+	btnModelo.addEventListener('click', e => {
+		location.replace('http://127.0.0.1:3000/Modelo')
+	})
+
+	btnJuego.addEventListener('click', e => {
+		location.replace('http://127.0.0.1:3000/Puntos')
+	})
+
+	btnRegresar.addEventListener("click", e=>{
 		location.replace("http://127.0.0.1:3000/init")
 	})
 }

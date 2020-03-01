@@ -11,10 +11,18 @@ const fire = require('./fire.js');
 const admJSON = require('./administradorJSON');
 
 let Update = false;
+let checkDownload = true;
 
 expressApp.use(express.static(path.join(__dirname, 'public')));
 expressApp.use(bodyParser.json()); //support json encoded bodies
 expressApp.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
+
+expressApp.get('/checkForDownload', async function(req, res){
+  console.log('Get method: return checkDownload variable');
+  var resp = checkDownload;
+  checkDownload = false;
+  res.status(200).send(resp);
+});
 
 expressApp.post('/canales', async function(req, res,next){
   console.log('Post method: upload channel information to firestore');
@@ -145,13 +153,13 @@ app.on('window-all-closed',(event) => {
       if(Update){
         var resp = await admJSON.readData({name : 'config.json'});
         
-        if(resp['OK']){
+        if(!resp['error']){
           for(let prop in resp['canales']){
             console.log(prop);
             //readfile
             var tmp = await admJSON.readData({name : resp['canales'][prop]['archivo']});
             //console.log(tmp);
-            if(tmp['OK']){
+            if(!tmp['error']){
               var info = {puntos : tmp['puntos']};
               //upload files
               await fire.uploadFile(prop, info);

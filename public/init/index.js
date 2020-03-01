@@ -18,6 +18,12 @@ window.onload=function(){
 	async function comparaFecha(){
 		let datosFS = '';
 		let datosJS = '';
+		let checkDownload = await getCheckDownload();
+
+		if(!checkDownload){
+			console.log('download have already done');
+			return;
+		}
 		//check for config.json file
 		datosJS = await compruebaArchivoConfig();
 
@@ -49,7 +55,19 @@ window.onload=function(){
 			}
 
 		}
-	};
+	}
+
+	function getCheckDownload(){
+		return new Promise(resolve => {
+			axios.get('/checkForDownload')
+			.then(function(res){
+				resolve(res.data);
+			})
+			.catch(function(error){
+				resolve({error : 'Got an error'});
+			})
+		});
+	}
 
 	function compruebaArchivoConfig(){
 		return new Promise(resolve => {

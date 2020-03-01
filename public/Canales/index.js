@@ -2,6 +2,7 @@ window.onload = async function(){
 	let btnReturn=document.getElementById('btnReturn');
 	let selPuntos = document.getElementById('selPuntos');
 	let titulo = document.getElementById('titulo');
+	let encabezado = document.getElementById('encabezado');
 	let informacion = document.getElementById('informacion');
 	let editar = document.getElementById('edit');
 
@@ -18,6 +19,8 @@ window.onload = async function(){
 	}
 	//cambiamos titulo
 	titulo.innerHTML = datos['titulo'];
+	encabezado.innerHTML = canal;
+
 	//obtener la informacion de los json
 	puntos = await obtenerInformacionPuntos(datos['archivo']);
 	//colocar elementos de select

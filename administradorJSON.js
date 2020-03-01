@@ -87,7 +87,6 @@ exports.readData = function(params){
 				resolve({error:"Got an error"});
 			}else{
 				var datos = JSON.parse(data);
-				datos['OK'] = 'File read sucessfully';
 				resolve(datos);
 			}
 		});

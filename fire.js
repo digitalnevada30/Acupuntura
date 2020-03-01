@@ -36,7 +36,7 @@ exports.readReg = function(params){
                 resolve({OK:"No such document"});
             }else{
                 data = doc.data();
-                data['OK'] = 'data is back!';
+                //data['OK'] = 'data is back!';
                 console.log('Document data: ', data);
                 resolve(data);
             }
@@ -79,7 +79,7 @@ exports.readConfig = function(){
                 resolve({error:"No such document"});
             }else{
                 data = doc.data();
-                data['OK'] = "data is back!";
+                //data['OK'] = "data is back!";
                 console.log(data);
                 resolve(data);
             }

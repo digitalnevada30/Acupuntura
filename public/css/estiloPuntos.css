@@ -1,0 +1,56 @@
+.elemento{
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  padding: 5px;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #aaaaaa;
+}
+
+#fuego{
+	background: #e30909;
+}
+
+#madera{
+  	background: #1fd615;
+}
+
+#tierra{
+  	background: #ffec17;
+}
+
+#agua{
+  	background: #15399e;
+}
+
+#metal{
+  	background: #a1a3ab;
+}
+
+.divQuestion{
+	width: 100px;
+  	height: 30px;
+  	border: 1px solid #000000; 	
+}
+
+#answer{
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	background: #e1e6eb;
+}
+
+.respuesta {
+	  width: 100px;
+	  border: 1px solid #aaaaaa;
+	  background: #062763;
+	  color: white;
+	}

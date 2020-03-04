@@ -5,42 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../css/estilo.css">
     <title id="encabezado"></title>
   </head>
   <body>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <p>Espacio para colocar el modelo</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <div class="row">
-            <div class="col-md-9 bg-dark">
-              <h1 class="text-light" id="titulo">Título</h1>  
+            <div class="col-md-9 bg-dark"  style="margin-bottom: 30px;">
+              <h2 class="text-light" id="titulo">Título</h2>  
             </div>
             <div class="col-md-3">
               <a id="edit" class="btn btn-info btn-lg">
-                <img src="../images/pencil.png" width="20" height="20"> Editar 
+                <img src="../images/documento.png" width="50" height="50"> 
               </a>
             </div>
           </div>
           <div class="row">
             <select id="selPuntos">
-              <option value="-" selected>-</option>
+              <option value="-" selected>Seleccione una opción</option>
             </select>
+              <a id="btnplay" class="btn btn-play">
+                <img src="../images/altavoz.png" width="35" height="35">
+              </a> 
+              <audio id="audio"></audio>
           </div>
           <div class="row">
-            <div id="informacion" class="col-md-12">
-
+            <div id="informacion" class="col-md-12" style="margin-bottom: 30px;">
             </div>
+          </div>
+          <div class="row">
+            <a id="btnReturn" class=" btn btn-play" style="margin-left:250px;">
+                <img src="../images/regre.png" width="55" height="55">
+            </a>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <button id="btnReturn">Regresar</button>
-        </div>
-      </div>
+      
     </div>
   </body>
 

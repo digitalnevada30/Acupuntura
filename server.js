@@ -1,3 +1,4 @@
+
 // Modules
 const {app, BrowserWindow} = require('electron')
 

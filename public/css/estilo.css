@@ -20,7 +20,7 @@ h1{
 	font-family:  "Homer Simpson UI";
 	font-size: 85px;
 	font-weight: bolder;
-	text-align: center;
+	margin-left: 350px;
 }
 
 h2{
@@ -30,6 +30,11 @@ h2{
 	text-align: center;
 }
 
+h3{
+	font-family:  "Homer Simpson UI";
+	font-size: 30px;
+	font-weight: bolder;
+}
 body{
 	background-color: #ffffff;
 }
@@ -39,8 +44,9 @@ body{
 
 .btnCanal {
 	text-decoration: none;
+	width: 200px;
 	padding: 5px;
-	font-weight: 25;
+	font-weight: 90;
 	font-size: 20px;
 	color: #ffffff;
 	background-color: #1883ba;
@@ -55,6 +61,7 @@ body{
     background-color: #ffffff;
 
 }
+
 
 
 

@@ -5,6 +5,8 @@ window.onload = async function(){
 	let encabezado = document.getElementById('encabezado');
 	let informacion = document.getElementById('informacion');
 	let editar = document.getElementById('edit');
+	let btnplay=document.getElementById('btnplay');
+	let audio=document.getElementById('audio');
 
 	let canal = window.location.search.substr(1).split('=')[1];
 	let datos = {};
@@ -37,6 +39,7 @@ window.onload = async function(){
 
 	selPuntos.addEventListener("change", e => {
 		colocarInformacion(selPuntos.value);
+		audio.setAttribute('src','../Audios/' + selPuntos.value + '.mp3');
 	});
 
 	editar.addEventListener("click", e => {
@@ -46,6 +49,15 @@ window.onload = async function(){
 			location.replace("http://127.0.0.1:3000/Editar?name=" + selPuntos.value + "-" + canal);
 		}
 	});
+
+	btnplay.addEventListener("click",e=>{
+		if(selPuntos.value == '-'){
+			console.log("no hay punto");
+		}else{
+			audio.play();
+		}
+	});
+
 
 
 	function obtenerInformacionCanales(){
@@ -82,10 +94,33 @@ window.onload = async function(){
 	function colocarInformacion(nombrePunto){
 		informacion.innerHTML = '';
 		for(let elem in puntos['puntos'][nombrePunto]){
+			let temp='';
+			switch (elem){
+				case 'nombre':
+					temp='Nombre';
+					break;
+				case 'localizacion':
+					temp ='Localización';
+					break;
+				case 'funcion':
+					temp='Función';
+					break;
+				case 'indicaciones':
+					temp='Indicaciones';
+					break;
+				case 'observaciones':
+					temp ='Observaciones';
+					break;
+				case 'importancia':
+					temp='Nivel de importancia';
+					break;
+				default:
+					break;
+			}
 			let tmp = `
 				<div class="row">
 					<div class="col-md-12">
-						<h3>`+ elem +`</h3>
+						<h3>`+ temp +`</h3>
 					</div>
 				</div>
 				<div class="row">

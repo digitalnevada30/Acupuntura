@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #FDFDFD;
 }
 
 #fuego{
@@ -17,15 +17,15 @@
 }
 
 #madera{
-  	background: #1fd615;
+  	background: #522704;
 }
 
 #tierra{
-  	background: #ffec17;
+  	background: #1fd615;
 }
 
 #agua{
-  	background: #15399e;
+  	background: #0E97BB;
 }
 
 #metal{
@@ -33,7 +33,7 @@
 }
 
 .divQuestion{
-	width: 100px;
+	width: 80px;
   	height: 30px;
   	border: 1px solid #000000; 	
 }
@@ -45,12 +45,14 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	background: #e1e6eb;
+	background: #F2F5F4;
 }
 
 .respuesta {
-	  width: 100px;
-	  border: 1px solid #aaaaaa;
-	  background: #062763;
+	  width: 80px;
+	  border: 1px solid #FDFDFD;
+	  background: #080132;
 	  color: white;
 	}
+
+

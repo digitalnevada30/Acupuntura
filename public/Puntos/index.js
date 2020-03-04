@@ -2,6 +2,7 @@ window.onload = async function(){
 	let divQuestion = document.getElementById('question');
 	//let divanswer = document.getElementById('answer');
 	let btnReturn = document.getElementById('btnReturn');
+	let titulo = document.getElementById('titulo');
 
 	let fuego = document.getElementById('fuego');
 	let madera = document.getElementById('madera');
@@ -10,7 +11,39 @@ window.onload = async function(){
 	let metal = document.getElementById('metal');
 
 	//read elementos.json
-	let elementos = await obtenerElementos();
+	let canal = window.location.search.substr(1).split('=')[1];
+	let canalInfo = await obtenerTipo(canal);
+	titulo.innerHTML = canalInfo['titulo'];
+	let tipo = canalInfo['tipo'];
+	let puntoElementos = await obtenerElementos(canalInfo['archivo']);
+
+	let elementos = {};
+	if(tipo === 'o'){
+		console.log('Tipo organo');
+		elementos = {
+			fuego : ['Fuego', 'Manto', 'Yi'],
+			tierra: ['Tierra', 'Arroyo', 'Xi'],
+			metal: ['Metal', 'Río'],
+			agua: ['Agua', 'Mar'],
+			madera: ['Madera', 'Pozo']
+		};
+	}else{
+		console.log('Tipo viscera');
+		elementos = {
+			fuego : ['Fuego', 'Río'],
+			tierra: ['Tierra', 'Mar'],
+			metal: ['Metal', 'Pozo'],
+			agua: ['Agua', 'Manantial'],
+			madera: ['Madera', 'Arroyo']
+		};
+	}
+	//add elementos from point
+	elementos['fuego'].push(puntoElementos['fuego']);
+	elementos['tierra'].push(puntoElementos['tierra']);
+	elementos['metal'].push(puntoElementos['metal']);
+	elementos['agua'].push(puntoElementos['agua']);
+	elementos['madera'].push(puntoElementos['madera']);
+	//let elementos = { "fuego" : [], "madera": [] }
 	let respuestas = [];
 
 	//in this for we add divs to dropping elements
@@ -49,7 +82,7 @@ window.onload = async function(){
 
 
 	btnReturn.addEventListener('click', e => {
-		location.replace('http://127.0.0.1:3000/Evaluativo');
+		location.replace('http://127.0.0.1:3000/Puntos/canal.html');
 	});
 
 	btnEval.addEventListener('click', e => {
@@ -76,7 +109,7 @@ window.onload = async function(){
 			}
 			let calificacion = respCorrectas*10.0/respuestas.length;
 			alert('Marcador: ' + respCorrectas + '/' + respuestas.length + '\n' + 'calificación: ' + calificacion.toFixed(1));
-			location.replace('http://127.0.0.1:3000/Puntos');
+			location.replace('http://127.0.0.1:3000/Puntos?name=' + canal);
 		}
 	});
 
@@ -89,21 +122,34 @@ window.onload = async function(){
 		return false;
 	}
 
-	function obtenerElementos(){
+	function obtenerTipo(canal){
 		return new Promise(resolve => {
-			let data = {name : "elementos.json"};
+			let data = {name : "config.json"};
 			axios.get('/testRead', {
 				params:data
 			})
 			.then(function (res){
-				resolve(res.data) ;
+				resolve(res.data['canales'][canal]) ;
 			})
 			.catch(function (error){
 				//console.log(error);
 				resolve({error:"Got an error"});
 			})
 		});
-	};
+	}
+
+	function obtenerElementos(archivo){
+		return new Promise(resolve => {
+			let data = {name : archivo};
+			axios.get('/testRead', {
+				params : data
+			})
+			.then(function (res){
+				resolve(res.data['elementos']);
+			})
+			.catch({error:"Got an error"});
+		});
+	}
 
 	function shuffle(array) {
 	  array.sort(() => Math.random() - 0.5);

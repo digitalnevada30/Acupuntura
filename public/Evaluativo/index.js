@@ -5,11 +5,11 @@ window.onload=function(){
 
 
 	btnModelo.addEventListener('click', e => {
-		location.replace('http://127.0.0.1:3000/Modelo')
+		location.replace('http://127.0.0.1:3000/Modelo/canal.html')
 	})
 
 	btnJuego.addEventListener('click', e => {
-		location.replace('http://127.0.0.1:3000/Puntos')
+		location.replace('http://127.0.0.1:3000/Puntos/canal.html')
 	})
 
 	btnRegresar.addEventListener("click", e=>{

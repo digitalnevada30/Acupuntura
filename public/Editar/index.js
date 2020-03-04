@@ -2,6 +2,7 @@ window.onload = async function(){
   let titulo = document.getElementById('titulo');
   let txtLoc = document.getElementById('txtLoc');
   let txtFun = document.getElementById('txtFun');
+  let txtInd = document.getElementById('txtInd');
   let txtObs = document.getElementById('txtObs');
   let txtImp = document.getElementById('txtImp');
   let btnBack = document.getElementById('btnBack');
@@ -15,6 +16,7 @@ window.onload = async function(){
   //set information in the boxes, change <br> to \n
   txtLoc.value = puntoInfo['puntos'][punto]['localizacion'].replace(/<br>/g, '\n');
   txtFun.value = puntoInfo['puntos'][punto]['funcion'].replace(/<br>/g, '\n');
+  txtInd.value = puntoInfo['puntos'][punto]['indicaciones'].replace(/<br>/g, '\n');
   txtObs.value = puntoInfo['puntos'][punto]['observaciones'].replace(/<br>/g, '\n');
   txtImp.value = puntoInfo['puntos'][punto]['importancia'];
   
@@ -34,8 +36,9 @@ window.onload = async function(){
     //to save we replace \n to <br>
     puntoInfo['puntos'][punto]['localizacion'] = txtLoc.value.replace(/\n/g , '<br>');
     puntoInfo['puntos'][punto]['funcion'] = txtFun.value.replace(/\n/g , '<br>');
+    puntoInfo['puntos'][punto]['indicaciones'] = txtInd.value.replace(/\n/g , '<br>');
     puntoInfo['puntos'][punto]['observaciones'] = txtObs.value.replace(/\n/g , '<br>');
-    puntoInfo['puntos'][punto]['importancia'] = txtImp.value;
+    puntoInfo['puntos'][punto]['importancia'] = parseInt(txtImp.value);
 
     actualizarPunto();
   });
@@ -121,5 +124,4 @@ window.onload = async function(){
       })
     });
   }
-
 }

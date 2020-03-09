@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="../css/estilo.css">
+    <style type="text/css">
+      .search-icon{
+        background: url("../images/search.png");
+        width: 32px;
+        height: 32px;
+        display: block;
+      }
+      .scroll-info{
+        width: 800px;
+        height: 400px;
+        padding: 5px;
+        margin-bottom: 15px;
+        background: #cdd0d4;
+        text-align: justify;
+        overflow-y: scroll;
+      }
+      #elementos{
+        height: 500px;
+        overflow-y: scroll;
+        /*background: #ffc2ed;*/
+      }
+
+      #elementos button{
+        width: 150px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      #buscador{
+        margin-right: 3px;
+      }
+
+      #txt-form-def{
+        width: 500px;
+        height: 200px;
+        text-align: justify;
+        overflow-y: scroll;
+        resize: none;
+      }
+
+      #txt-form-nombre{
+        width: 300px;
+      }
+
+
+      #formulario{
+        display: none;
+      }
+      .contenedor{
+        width: 600px;
+        height: 500px;
+        background: #e0d6d5;
+        display: block;
+      }
+      .fondo-formulario{
+        height: 700px;
+      }
+
+      h3{
+        margin-bottom: 20px;
+      }
+    </style>
+    <title id="encabezado"></title>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src="../jquery/jquery-3.4.1.js"></script>
+    <script src="dinamicas.js"></script>
+  </head>
+
+  <body>
+    <div class="container" id="principal">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <!-- element segment -->
+          <!-- titulo -->
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3>Glosario</h3>
+            </div>
+          </div>
+          <!-- busqueda y nuevo elemento-->
+          <div class="row justify-content-between">
+            <div class="col-md-8 pt-2 pb-2 form-inline justify-content-center" style="background: #5a5a5e; border-radius: 25px;">
+              <input class="form-control" id="buscador" type="text" placeholder="Buscar" style="width: 260px;">
+              <span class="search-icon"></span> 
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-success" id="btn-nuevo">Nuevo Concepto</button>
+            </div>
+          </div>
+          <!-- elementos -->
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-11 d-flex flex-wrap justify-content-around align-content-start" id="elementos"></div>
+          </div>
+
+        </div>
+
+        <div class="col-md-5">
+          <!-- show information -->
+          <!-- titulo -->
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3 id="txt-titulo-concepto">Sin Elemento</h3>
+            </div>
+          </div>
+          <!-- information -->
+          <div class="row">
+            <div class="scroll-info" id="txt-info"></div>
+          </div>
+          <!-- edit and back -->
+          <div class="row justify-content-between">
+            <div class="col-md-4">
+              <button class="btn btn-primary" id="btn-editar">Editar</button>
+            </div>
+            <div class="col-md-2">
+              <a id="btn-back" class=" btn btn-play">
+                <img src="../images/regre.png" width="55" height="55">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="container" id="formulario">
+      <div class="d-flex p-2 justify-content-center align-items-center fondo-formulario">
+        <div class="contenedor p-5">
+
+          <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+              <h5>Nombre del Concepto</h5>
+            </div>
+          </div>
+
+          <div class="row pb-5 justify-content-center">
+            <div class="col-md-7">
+              <input class="form-control" id="txt-form-nombre" type="text" placeholder="Nombre">
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+              <h5>Definición</h5>
+            </div>
+          </div>
+
+          <div class="row pb-2 justify-content-center">
+            <div class="col-md-12">
+              <textarea id="txt-form-def"></textarea>
+            </div>
+          </div>
+
+          <div class="row justify-content-around">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-outline-info" id="btn-form-regresar">Regresar</button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-outline-danger" id="btn-form-borrar">Borrar!</button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-outline-success" id="btn-form-guardar">Guardar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="./../axios/axios.min.js"></script>
+  <script src="index.js"></script>
+  <script>if (window.module) module = window.module;</script>
+</html>

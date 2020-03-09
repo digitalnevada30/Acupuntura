@@ -32,6 +32,7 @@ window.onload=function(){
 			if(datosJS['error']){
 				//in this case we need to end the application because we dont have neither json nor db
 				alert("1 We don't have any Information");
+				terminaAplicacion();
 			}else{
 				//we need to base our data on recent files and do nothing
 				alert('2 Working with current files');
@@ -41,6 +42,7 @@ window.onload=function(){
 			if(datosJS['error']){
 				//Download information from FS
 				alert('3 Download from FS due to json error');
+				await descargaContenidoFS();
 			}else{
 				//we have both, we need to compare update field
 				console.log(datosJS['fecha'] + ' vs ' + datosFS['fecha']);
@@ -57,6 +59,9 @@ window.onload=function(){
 		}
 	}
 
+	function terminaAplicacion(){
+		axios.get('/finishApp')
+	}
 	function getCheckDownload(){
 		return new Promise(resolve => {
 			axios.get('/checkForDownload')

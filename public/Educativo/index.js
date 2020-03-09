@@ -1,5 +1,6 @@
 window.onload=function(){
 	let btnMain=document.getElementById('btnMain')
+	let btnGlosario = document.getElementById('btnGlosario');
 	let btnOrHigado=document.getElementById('btnOrHigado')
 	let btnOrCorazon=document.getElementById('btnOrCorazon')
 	let btnOrPericardio=document.getElementById('btnOrPericardio')
@@ -14,6 +15,9 @@ window.onload=function(){
 	let btnViInGrueso=document.getElementById('btnViInGrueso')
 	let btnViVejiga=document.getElementById('btnViVejiga')
 
+	btnGlosario.addEventListener('click', e => {
+		location.replace('http://127.0.0.1:3000/Glosario')
+	});
 	btnMain.addEventListener("click", e=>{
 		location.replace("http://127.0.0.1:3000/init")
 	})

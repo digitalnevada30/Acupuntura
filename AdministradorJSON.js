@@ -23,9 +23,14 @@ exports.writeData = function(data){
 
 exports.writePoint = function(data){
 	return new Promise(resolve => {
-		var nombre = data['nombre'];
-		var id = data['id'];
-		var datos = data[id];
+		/*
+		archivo: archivo,
+		nombrePunto: nombrePunto,
+		info: info
+		*/
+		var nombre = data['archivo'];
+		var id = data['nombrePunto'];
+		var datos = data['info'];
 		fs.readFile('./Informacion/' + nombre, function(err, data2){
 			if(err){
 				console.log('An error occurred while writing JSON 31');
@@ -62,8 +67,9 @@ exports.updateDate = function(data){
 				resolve({error:"Got an error"});
 			}else{
 				var info = JSON.parse(data2);
+				console.log('fecha antes:' + info);
 				info['fecha'] = fecha;
-				console.log(info);
+				console.log('fecha despues: ' + info);
 				info = JSON.stringify(info);
 				fs.writeFile('./Informacion/config.json', info, 'utf8', function(err){
 					if(err){

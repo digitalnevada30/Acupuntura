@@ -3,55 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net http://127.0.0.1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Herramientas/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet"  href="../css/estilo.css">
-    <title id="encabezado"></title>
+    <style text="text-css">
+    .canal-scroll-puntos{
+      height: 400px;
+      margin-bottom: 15px;
+      padding-top: 15px;
+      text-align: justify;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    </style>
+    <title>Información</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-5">
-          <p>Espacio para colocar el modelo</p>
-        </div>
-        <div class="col-md-7">
-          <div class="row">
-            <div class="col-md-9 bg-dark"  style="margin-bottom: 30px;">
-              <h2 class="text-light" id="titulo">Título</h2>  
-            </div>
-            <div class="col-md-3">
-              <a id="edit" class="btn btn-info btn-lg">
-                <img src="../images/documento.png" width="50" height="50"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <select id="selPuntos">
-              <option value="-" selected>Seleccione una opción</option>
-            </select>
-              <a id="btnplay" class="btn btn-play">
-                <img src="../images/altavoz.png" width="35" height="35">
-              </a> 
-              <audio id="audio"></audio>
-          </div>
-          <div class="row">
-            <div id="informacion" class="col-md-12" style="margin-bottom: 30px;">
-            </div>
-          </div>
-          <div class="row">
-            <a id="btnReturn" class=" btn btn-play" style="margin-left:250px;">
-                <img src="../images/regre.png" width="55" height="55">
-            </a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </body>
 
-  <script src="../jquery/jquery-3.4.1.js"></script>
+    <div id="app">
+      <canales-app></canales-app>
+    </div>
+
+  </body>
+  <script src="../Herramientas/jquery/jquery-3.4.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-  <script src="./../axios/axios.min.js"></script>
-  <script src="index.js"></script>
+  <script src="../Herramientas/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="../Herramientas/axios/axios.min.js"></script>
+  <script src="../Herramientas/SweetAlert/sweetalert.min.js"></script>
+  <script src="../Herramientas/Vue/vue.js"></script>
+  <script src="main.js"></script>
 </html>

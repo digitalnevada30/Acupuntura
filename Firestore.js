@@ -105,6 +105,18 @@ exports.uploadFile = function(documentName, info){
     });
 }
 
+exports.updateDate = function(fecha){
+  return new Promise(resolve => {
+    db.collection('Canales').doc('config').update({fecha: fecha})
+      .then(function(docRef){
+        resolve({OK: "Fecha actualizada"});
+      })
+      .catch(function(error){
+        resolve({error:'Error al actualizar la fecha'});
+      })
+  });
+}
+
 exports.uploadConfig = function(info){
     return new Promise(resolve => {
         db.collection('Canales').doc('config').set(info)

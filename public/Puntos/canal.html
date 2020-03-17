@@ -3,80 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net http://127.0.0.1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Herramientas/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet"  href="../css/estilo.css">
+    <style text="text-css">
+      .evaluativo-scroll-canal{
+        height: 400px;
+        padding: 5px;
+        margin-bottom: 15px;
+        text-align: justify;
+        overflow-y: scroll;
+      }
+    </style>
     <title>Modulo Evaluativo</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row justify-content-center" style="margin-bottom:90px; ">
-        <div class="col-md-12">
-          <h2>Seleccione el Canal</h2>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-3"><!--primer columna-->
-          <!--organos-->
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn btn-success" id="btnOrHigado">Higado</button>
-          </div> 
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn-success" id="btnOrCorazon">Corazón</button>
-          </div> 
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn-success" id="btnOrPericardio">Pericardio</button>
-          </div>
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn-success" id="btnOrBazo">Bazo</button>
-          </div> 
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn-success" id="btnOrPulmon">Pulmón</button>
-          </div> 
-          <div class="row p-1">
-             <button type="button" class="btnCanal btn-success" id="btnOrRinon">Riñón</button>
-          </div> 
-          <!--<div class="row p-1">
-             <button type="button" class="btn btn-success" id="btnDoMai">Do Mai</button>
-          </div> -->
-        </div>
-        <div class="col-md-3"><!--Segunda columna-->
-          <!--Viseras-->
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViVesicula">Vesícula Biliar</button>
-          </div>
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViInDelgado">Intestino Delgado</button>
-          </div>
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViSanJ">San Jiao</button>
-          </div>
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViEstomago">Estómago</button>
-          </div>
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViInGrueso">Intestino Grueso</button>
-          </div>
-          <div class="row p-1">
-            <button type="button" class="btnCanal btn-danger" id="btnViVejiga" style="margin-bottom:85px; ">Vejiga</button>
-        </div>
-        <!--<div class="row p-1">
-             <button type="button" class="btn btn-danger" id="btnRenMai">Ren Mai</button>
-          </div> -->
 
-          <div class="row">
-            <a id="btnMain" class=" btn btn-play" style="margin-left:170px;">
-                <img src="../images/regre.png" width="55" height="55">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>    
+    <div id="app">
+      <eva-sel-canal></eva-sel-canal>
+    </div>
 
-   
   </body>
-  <script src="../jquery/jquery-3.4.1.js"></script>
+  <script src="../Herramientas/jquery/jquery-3.4.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="../Herramientas/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="../Herramientas/axios/axios.min.js"></script>
+  <script src="../Herramientas/SweetAlert/sweetalert.min.js"></script>
+  <script src="../Herramientas/Vue/vue.js"></script>
   <script src="canal.js"></script>
 </html>

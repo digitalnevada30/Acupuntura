@@ -147,44 +147,44 @@ window.onload = function(){
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 id="titulo">{{punto}}</h1>
+            <h2 id="titulo">{{punto}}</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 bg-dark">
-            <h3 class="text-light">Localización</h3>
+          <div class="col-md-4">
+            <h4 class="text-light barratitulo">Localización</h4>
           </div>
           <div class="col-md-8">
-            <textarea id="txtLoc" row="10" cols="100" v-model="localizacion"></textarea>
+            <textarea id="txtLoc" class="editar-textArea" row="10" cols="100" v-model="localizacion"></textarea>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 bg-dark">
-            <h3 class="text-light">Función</h3>
+          <div class="col-md-4">
+            <h4 class="text-light barratitulo">Función</h4>
           </div>
           <div class="col-md-8">
-            <textarea id="txtFun" row="10" cols="100" v-model="funcion"></textarea>
+            <textarea id="txtFun" class="editar-textArea" row="10" cols="100" v-model="funcion"></textarea>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 bg-dark">
-            <h3 class="text-light">Indicaciones</h3>
+          <div class="col-md-4">
+            <h4 class="text-light barratitulo">Indicaciones</h4>
           </div>
           <div class="col-md-8">
-            <textarea id="txtInd" row="10" cols="100" v-model="indicaciones"></textarea>
+            <textarea id="txtInd" class="editar-textArea" row="10" cols="100" v-model="indicaciones"></textarea>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 bg-dark">
-            <h3 class="text-light">Observaciones</h3>
+          <div class="col-md-4">
+            <h4 class="text-light barratitulo">Observaciones</h4>
           </div>
           <div class="col-md-8">
-            <textarea id="txtObs" row="10" cols="100" v-model="observaciones"></textarea>
+            <textarea id="txtObs" class="editar-textArea" row="10" cols="100" v-model="observaciones"></textarea>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 bg-dark">
-            <h3 class="text-light" style="margin-bottom:20px;">Importancia</h3>
+          <div class="col-md-4">
+            <h4 class="text-light barratitulo">Importancia</h4>
           </div>
           <div class="col-md-8">
             <!--<input type="number" id="txtImp">-->
@@ -197,12 +197,16 @@ window.onload = function(){
 
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <button class="btn btn-danger" id="btnBack" v-on:click="regresar">Regresar</button>
+        <div class="row mt-3">
+          <div class="col-md-2">
+            <a class="btn" v-on:click="regresar">
+              <img src="../images/regre.png" width="55" height="55">
+            </a>
           </div>
-          <div class="col-md-4">
-            <button class="btn btn-info" id="btnSave" v-on:click="guardar">Guardar</button>
+          <div class="col-md-2">
+            <a class="btn" v-on:click="guardar">
+              <img src="../images/save.png" width="55" height="55">
+            </a>
           </div>
         </div>
       </div>

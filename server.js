@@ -53,7 +53,7 @@ function createWindow () {
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadURL('http://127.0.0.1:3000/init')
-  //mainWindow.loadURL('http://127.0.0.1:3000/Prototipo/editar.html?name=Dadun-higado')
+  //mainWindow.loadURL('http://127.0.0.1:3000/Prototipo?name=higado')
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools();

@@ -34,7 +34,7 @@ window.onload = function(){
         <div class="row justify-content-around">
           <div class="col-md-4"> <!--Primer boton-->
               <div class="row p-1">
-                <button type="button" class="btnMain btn btn-success" id="btnModelo" v-on:click="abrirModelo">Modelo 2D</button>
+                <button type="button" class="btnMain btn btn-success" id="btnModelo" v-on:click="abrirModelo">Cuerpo humano</button>
               </div>
             </div> <!--fin primer boton-->
             <div class="col-md-4">

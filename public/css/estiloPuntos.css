@@ -1,3 +1,9 @@
+h4{
+  font-family:  "Homer Simpson UI";
+  color: #000000;
+  font-size: 27px;
+  font-weight: bolder;
+}
 .elemento{
   border-radius: 50%;
   width: 220px;
@@ -11,31 +17,35 @@
   align-items: center;
   border: 1px solid #FDFDFD;
 }
+.recuadro{
+  
+}
 
 #fuego{
-	background: #e30909;
+  background:linear-gradient(to top, gold,#FF0300);
+  /*background: #e30909;*/
 }
 
 #madera{
-  	background: #522704;
+  	background:linear-gradient(to top,#924D42,#430C03);
 }
 
 #tierra{
-  	background: #1fd615;
+  	background:linear-gradient(to top,#6CE042,#079C17);
 }
 
 #agua{
-  	background: #0E97BB;
+  	background:linear-gradient(to top,#0DDDE3,#1069B4);
 }
 
 #metal{
-  	background: #a1a3ab;
+  	background:linear-gradient(to top,#626567,#F8F9F9 );
 }
 
 .divQuestion{
 	width: 80px;
-  	height: 30px;
-  	border: 1px solid #000000; 	
+  	height: 28px;
+  	border: 1px solid #ffffff; 	
 }
 
 #answer{
@@ -45,14 +55,21 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	background: #F2F5F4;
+	background: #000E29;
 }
 
 .respuesta {
 	  width: 80px;
-	  border: 1px solid #FDFDFD;
-	  background: #080132;
-	  color: white;
+	  border: 1px solid #FBFCFC;
+	  background: #FBFCFC;
+	  color:#000000;
+    font-family:"Optima";
+    text-align: center;
 	}
+
+
+.mb20{
+  margin-bottom:20px;
+}
 
 

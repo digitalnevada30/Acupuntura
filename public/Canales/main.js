@@ -146,17 +146,18 @@ window.onload = function(){
           </div>
           <div class="col-md-7">
             <div class="row">
-              <div class="col-md-9 bg-dark"  style="margin-bottom: 30px;">
+              <div class="col-md-9 barratitulo"  style="margin-bottom: 30px;">
                 <h2 class="text-light" id="titulo">{{titulo}}</h2>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 text-center">
                 <a id="edit" class="btn btn-info btn-lg" v-on:click="editar">
                   <img src="../images/documento.png" width="50" height="50">
                 </a>
+                <h5>Editar</h5>
               </div>
             </div>
             <div class="row">
-              <select id="selPuntos" v-model="puntoSeleccionado">
+              <select class="select" id="selPuntos" v-model="puntoSeleccionado">
                 <option v-for="elemento in puntos" v-bind:value="elemento.valor">{{elemento.nombre}}</option>
               </select>
                 <a id="btnplay" class="btn btn-play" v-on:click="reproducir">

@@ -220,17 +220,17 @@ window.onload = function(){
             <!-- titulo -->
             <div class="row">
               <div class="col-md-12 text-center">
-                <h3>{{tituloGlosario}}</h3>
+                <h2>{{tituloGlosario}}</h2>
               </div>
             </div>
             <!-- busqueda y nuevo elemento-->
             <div class="row justify-content-between">
-              <div class="col-md-8 pt-2 pb-2 form-inline justify-content-center glosario-buscador">
+              <div class="col-md-8 pt-2 pb-2 form-inline justify-content-center barraicono">
                 <input class="form-control" id="buscador" type="text" placeholder="Buscar" v-model="buscador">
                 <span class="search-icon"></span>
               </div>
               <div class="col-md-4">
-                <button class="btn btn-success" id="btn-nuevo" v-on:click="nuevo">Nuevo Concepto</button>
+                <button class="btn btnNC" id="btn-nuevo" v-on:click="nuevo">Nuevo Concepto</button>
               </div>
             </div>
             <!-- elementos -->
@@ -261,7 +261,10 @@ window.onload = function(){
             <!-- edit and back -->
             <div class="row justify-content-between">
               <div class="col-md-4">
-                <button class="btn btn-primary" id="btn-editar" v-on:click="editar">Editar</button>
+                <a class=" btn" v-on:click="editar">
+                  <img src="../images/pencil.png" width="40" height="40">
+                </a>
+                <h5>Editar</h5>
               </div>
               <div class="col-md-2">
                 <a id="btn-back" class=" btn btn-play" v-on:click="regresar">
@@ -320,7 +323,8 @@ window.onload = function(){
 
       this.$root.$on('cambiarVistaF', (id, def, tipo) => {
         //cambiamos background
-        $('body').css('background', '#050429');
+        $('body').css('background', '#000e29');
+        //050429
         //mostrar elemento
         $('#formulario').fadeToggle();
         //limpiamos datos
@@ -358,7 +362,7 @@ window.onload = function(){
 
             <div class="row justify-content-center">
               <div class="col-md-12 text-center">
-                <h5>Nombre del Concepto</h5>
+                <h3>Nombre del Concepto</h3>
               </div>
             </div>
 
@@ -370,7 +374,7 @@ window.onload = function(){
 
             <div class="row justify-content-center">
               <div class="col-md-12 text-center">
-                <h5>Definición</h5>
+                <h6>Definición</h6>
               </div>
             </div>
 
@@ -382,13 +386,19 @@ window.onload = function(){
 
             <div class="row justify-content-around">
               <div class="col-md-4">
-                <button type="button" class="btn btn-outline-info" id="btn-form-regresar" v-on:click="regresar">Regresar</button>
+                <a type="button" class="btn btn-outline-info" v-on:click="regresar">
+                  <img src="../images/regre.png" width="40" height="40">
+                </a>
               </div>
               <div class="col-md-4" v-if="verBorrar">
-                <button type="button" class="btn btn-outline-danger" id="btn-form-borrar" v-on:click="borrar">Borrar!</button>
+                <a type="button" class="btn btn-outline-info" v-on:click="borrar">
+                  <img src="../images/borrar.png" width="40" height="40">
+                </a>
               </div>
               <div class="col-md-4">
-                <button type="button" class="btn btn-outline-success" id="btn-form-guardar" v-on:click="guardar">Guardar</button>
+                <a type="button" class="btn btn-outline-info" v-on:click="guardar">
+                  <img src="../images/save.png" width="40" height="40">
+                </a>
               </div>
             </div>
 

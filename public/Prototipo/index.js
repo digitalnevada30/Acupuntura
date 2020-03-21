@@ -1,127 +1,158 @@
 window.onload = async function(){
-  let titulo = document.getElementById('titulo');
-  let txtLoc = document.getElementById('txtLoc');
-  let txtFun = document.getElementById('txtFun');
-  let txtInd = document.getElementById('txtInd');
-  let txtObs = document.getElementById('txtObs');
-  let txtImp = document.getElementById('txtImp');
-  let btnBack = document.getElementById('btnBack');
-  let btnSave = document.getElementById('btnSave');
+	console.log('Evaluando este modulo');
+	let divQuestion = document.getElementById('question');
+	//let divanswer = document.getElementById('answer');
+	let btnReturn = document.getElementById('btnReturn');
+	let titulo = document.getElementById('titulo');
 
-  let canal = window.location.search.substr(1).split('=')[1].split('-')[1];
-  let punto = window.location.search.substr(1).split('=')[1].split('-')[0];
-  let datos = await obtenerInformacionCanal();
-  let puntoInfo = await obtenerInformacionPuntos(datos['archivo']);
+	let fuego = document.getElementById('fuego');
+	let madera = document.getElementById('madera');
+	let tierra = document.getElementById('tierra');
+	let agua = document.getElementById('agua');
+	let metal = document.getElementById('metal');
 
-  //set information in the boxes, change <br> to \n
-  txtLoc.value = puntoInfo['puntos'][punto]['localizacion'].replace(/<br>/g, '\n');
-  txtFun.value = puntoInfo['puntos'][punto]['funcion'].replace(/<br>/g, '\n');
-  txtInd.value = puntoInfo['puntos'][punto]['indicaciones'].replace(/<br>/g, '\n');
-  txtObs.value = puntoInfo['puntos'][punto]['observaciones'].replace(/<br>/g, '\n');
-  txtImp.value = puntoInfo['puntos'][punto]['importancia'];
-  
+	//read elementos.json
+	let canal = window.location.search.substr(1).split('=')[1];
+	let canalInfo = await obtenerTipo(canal);
+	titulo.innerHTML = canalInfo['titulo'];
+	let tipo = canalInfo['tipo'];
+	let puntoElementos = await obtenerElementos(canalInfo['archivo']);
 
-  titulo.innerHTML = punto;
+	let elementos = {};
+	if(tipo === 'o'){
+		console.log('Tipo organo');
+		elementos = {
+			fuego : ['Fuego', 'Manto', 'Yi'],
+			tierra: ['Tierra', 'Arroyo', 'Xi'],
+			metal: ['Metal', 'Río'],
+			agua: ['Agua', 'Mar'],
+			madera: ['Madera', 'Pozo']
+		};
+	}else{
+		console.log('Tipo viscera');
+		elementos = {
+			fuego : ['Fuego', 'Río'],
+			tierra: ['Tierra', 'Mar'],
+			metal: ['Metal', 'Pozo'],
+			agua: ['Agua', 'Manantial'],
+			madera: ['Madera', 'Arroyo']
+		};
+	}
+	//add elementos from point
+	elementos['fuego'].push(puntoElementos['fuego']);
+	elementos['tierra'].push(puntoElementos['tierra']);
+	elementos['metal'].push(puntoElementos['metal']);
+	elementos['agua'].push(puntoElementos['agua']);
+	elementos['madera'].push(puntoElementos['madera']);
+	//let elementos = { "fuego" : [], "madera": [] }
+	let respuestas = [];
 
-  txtImp.addEventListener("change", e => {
-    if(txtImp.value < 0) txtImp.value = 0;
-    else if(txtImp.value > 5) txtImp.value = 5;
-  });
+	//in this for we add divs to dropping elements
+	for(let el in elementos){
+		for(let i=0 ; i < elementos[el].length ; i++){
+			var tmpNode = document.createElement('DIV');
 
-  btnBack.addEventListener('click', e => {
-    location.replace('http://127.0.0.1:3000/Canales?name=' + canal);
-  });
+			tmpNode.setAttribute("id", el + i);
+			tmpNode.setAttribute("class", "divQuestion");
+			tmpNode.setAttribute("ondrop", "drop(event)");
+			tmpNode.setAttribute("ondragover", "allowDrop(event)");
+			document.getElementById(el).appendChild(tmpNode);
+			respuestas.push(elementos[el][i]);
+		}
+	}
 
-  btnSave.addEventListener("click", e => {
-    //to save we replace \n to <br>
-    puntoInfo['puntos'][punto]['localizacion'] = txtLoc.value.replace(/\n/g , '<br>');
-    puntoInfo['puntos'][punto]['funcion'] = txtFun.value.replace(/\n/g , '<br>');
-    puntoInfo['puntos'][punto]['indicaciones'] = txtInd.value.replace(/\n/g , '<br>');
-    puntoInfo['puntos'][punto]['observaciones'] = txtObs.value.replace(/\n/g , '<br>');
-    puntoInfo['puntos'][punto]['importancia'] = parseInt(txtImp.value);
+	//add the answer divs
+	shuffle(respuestas);
 
-    actualizarPunto();
-  });
+	for(let i=0 ; i < respuestas.length ; i++){
+		//<div id="divAnswer" draggable="true" ondragstart="drag(event)" onmouseup="clickFun(event)">Answer 1</div>
+		let tmpNode = document.createElement('DIV');
 
-  function obtenerInformacionCanal(){
-    return new Promise(resolve => {
-      let data = {name : "config.json"};
-      axios.get('/testRead', {
-        params:data
-      })
-      .then(function (res){
-        resolve(res.data['canales'][canal]) ;
-      })
-      .catch(function (error){
-        //console.log(error);
-        resolve({error:"Got an error"});
-      })
-    });
-  }
+		tmpNode.setAttribute("id", respuestas[i]);
+		tmpNode.setAttribute("draggable", "true");
+		tmpNode.setAttribute("ondragstart", "drag(event)");
+		tmpNode.setAttribute("onmouseup", "clickFun(event)");
+		tmpNode.setAttribute("class", "respuesta");
 
-  function obtenerInformacionPuntos(nombre){
-    return new Promise(resolve => {
-      let data = {name : nombre};
-      axios.get('/testRead', {
-        params:data
-      })
-      .then(function(res){
-        resolve(res.data);
-      })
-      .catch(function(error){
-        resolve({error : 'Got an error'});
-      })
-    });
-  }
+		tmpNode.innerHTML = respuestas[i];
 
-  function actualizarPunto(){
-    //return new Promise(resolve => {
-      let data = {
-        id : punto
-      };
+		document.getElementById('answer').appendChild(tmpNode);
 
-      data[punto] = puntoInfo['puntos'][punto];
-      data['nombre'] = datos['archivo'];
-      axios.post('/updatePoint', {
-        params: data
-      })
-      .then(async function(res){
-        //console.log(res);
-        //resolve(res.data);
-        //return (res.data);
-        if(res.data['error']){
-          alert('Error al guardar el punto');
-        }else{
-          await actualizafechaJSON();
-          alert('finish upload Date');
-          location.replace('http://127.0.0.1:3000/Canales?name=' + canal);
-        }
-      })
-      .catch(function(error){
-        console.log(error);
-        //return({error : 'Got an error'});
-        alert('Error al guardar el punto');
-      })
-    //});
-  }
+	}
 
-  function actualizafechaJSON(){
-    return new Promise(resolve => {
-      let myDate = Date.now();
-      let data = {fecha : myDate};
-      axios.post('/updateDate',{
-        params : data
-      })
-      .then(function(res){
-        console.log(res.data);
-        if(res.data['error']){
-          alert('Error al actualizar la fecha');
-          resolve();
-        }else{
-          resolve();
-        }
 
-      })
-    });
-  }
+
+	btnReturn.addEventListener('click', e => {
+		location.replace('http://127.0.0.1:3000/Puntos/canal.html');
+	});
+
+	btnEval.addEventListener('click', e => {
+		var divanswer = document.getElementById('answer');
+		//console.log(divanswer.childNodes);
+		console.log(elementos);
+		if(divanswer.childNodes.length !== 0){
+			alert('Favor de completar el ejercicio');
+		}else{
+			let respCorrectas = 0;
+			for(let el in elementos){
+				//check each circle
+				//console.log(document.getElementById(el).childNodes);
+				console.log('canal: ' + el);
+				for(let i=0 ; i < document.getElementById(el).childNodes.length ; i++){
+					//resp: document.getElementById(el + i).childNodes[0].innerHTML
+					let nombre = document.getElementById(el + i).childNodes[0].innerHTML;
+					if(checkAnswer(elementos[el], nombre)){
+						console.log('Correcta: ' + el + ' - ' + nombre);
+						respCorrectas++;
+					}
+				}
+
+			}
+			let calificacion = respCorrectas*10.0/respuestas.length;
+			alert('Marcador: ' + respCorrectas + '/' + respuestas.length + '\n' + 'calificación: ' + calificacion.toFixed(1));
+			location.replace('http://127.0.0.1:3000/Puntos?name=' + canal);
+		}
+	});
+
+	function checkAnswer(arreglo, nombre){
+		for(let i=0 ; i < arreglo.length ; i++){
+			if(arreglo[i] == nombre){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function obtenerTipo(canal){
+		return new Promise(resolve => {
+			let data = {name : "config.json"};
+			axios.get('/testRead', {
+				params:data
+			})
+			.then(function (res){
+				resolve(res.data['canales'][canal]) ;
+			})
+			.catch(function (error){
+				//console.log(error);
+				resolve({error:"Got an error"});
+			})
+		});
+	}
+
+	function obtenerElementos(archivo){
+		return new Promise(resolve => {
+			let data = {name : archivo};
+			axios.get('/testRead', {
+				params : data
+			})
+			.then(function (res){
+				resolve(res.data['elementos']);
+			})
+			.catch({error:"Got an error"});
+		});
+	}
+
+	function shuffle(array) {
+	  array.sort(() => Math.random() - 0.5);
+	}
 }

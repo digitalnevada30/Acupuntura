@@ -67,26 +67,26 @@ window.onload = function(){
     },
     template: `
       <div class="container">
-        <div class="row justify-content-center" style="margin-bottom:90px; ">
+        <div class="row justify-content-center">
           <div class="col-md-12">
             <h2>{{titulo}}</h2>
           </div>
         </div>
         <div class="row justify-content-center" >
           <div class="col-md-6">
-            <div class="d-flex flex-row flex-wrap justify-content-around  p-2 educativo-scroll-canal">
+            <div class="d-flex flex-row flex-wrap justify-content-around  p-2 educativo-canal">
               <div class="pb-2 pt-2" v-for="(v, k) in botones">
-                <button type="button" class="btnCanal btn btn-success" v-on:click="abrirCanal($event, v.id)">{{v.valor}}</button>
+                <button type="button" class="btnCanal btn" v-on:click="abrirCanal($event, v.id)">{{v.valor}}</button>
               </div>
             </div>
           </div>
         </div>
         <div class="row justify-content-between">
-          <div class="col-md-2">
-            <h5>{{tituloGlosario}}</h5>
+          <div class="col-md-2 text-center">
             <a id="btnGlosario" class=" btn btn-play" v-on:click="abrirGlosario($event)">
               <img src="../images/glosario.png" width="55" height="55">
             </a>
+            <h5>{{tituloGlosario}}</h5>
           </div>
           <div class="col-md-2">
             <a id="btnMain" class=" btn btn-play" v-on:click="regresar($event)">

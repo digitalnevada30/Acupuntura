@@ -68,9 +68,9 @@ window.onload = function(){
 
 				<div class="row justify-content-center" >
 					<div class="col-md-6">
-						<div class="d-flex flex-row flex-wrap justify-content-around  p-2 evaluativo-scroll-canal">
+						<div class="d-flex flex-row flex-wrap justify-content-around  p-2">
 							<div class="pb-2 pt-2" v-for="(v, k) in botones">
-								<button type="button" class="btnCanal btn btn-success" v-on:click="abrirCanal($event, v)">{{v}}</button>
+								<button type="button" class="btnCanal btn btn-success" v-on:click="abrirCanal($event, v)">{{datos[v]['nombre']}}</button>
 							</div>
 						</div>
 					</div>

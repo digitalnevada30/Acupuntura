@@ -1,30 +1,97 @@
-/* Estilos Menu pricipal*/
+/*Compartidos*/
 .btnMain{
 	text-decoration: none;
+	font-family:"Optima";
 	padding: 25px;
 	font-weight: 600;
 	font-size: 45px;
 	color: #ffffff;
-	background-color: #1883ba;
+	background-color: #000E29; /*1A5276  002E4C*/
 	border-radius: 6px;
-	border: 2px solid #0016b0;
+	border: 2px solid #000E29;
 	text-align: center;
 }
 
+.bg{
+	background-color:#FBFCFC;
+}
 .btnMain:hover{
-    color: #1883ba;
-    background-color: #ffffff;
-  }
+    color: #000E29;
+    background-color: #D5D8DC;
+    border: 2px solid #000E29;
+}
+.select{
+	font-family:"Optima";
+	font-size: 20px;
+}
+
+.barratitulo{
+	background-color: #000E29;
+	text-align: center;
+	margin-bottom:30px;
+}
+
+/*educativo*/
+.educativo-canal{
+	height: 400px;
+	padding: 5px;
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+/*editar*/
+.editar-textArea{
+	height: 90px;
+}
+
+
+/*canales*/
+.canal-scroll-puntos{
+	height: 380px;
+	margin-bottom: 5px;
+	padding-top: 15px;
+	text-align: justify;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#titulo{
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+.btnCanal {
+	text-decoration: none;
+	font-family:"Optima";
+	width: 200px;
+	padding: 5px;
+	font-weight: 90;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #000E29;
+	border-radius: 6px;
+	border: 2px solid #000E29;
+	text-align: center;
+
+}
+.btnCanal:hover{
+	color: #000E29;
+    background-color: #D5D8DC;
+    border: 2px solid #000E29;
+}
 
 h1{
 	font-family:  "Homer Simpson UI";
+	color: #000E29;
 	font-size: 85px;
 	font-weight: bolder;
-	margin-left: 350px;
+	margin-bottom: 100px;
+	margin-left: 325px;
 }
 
 h2{
 	font-family:  "Homer Simpson UI";
+	color: #000E29;
 	font-size: 50px;
 	font-weight: bolder;
 	text-align: center;
@@ -32,37 +99,141 @@ h2{
 
 h3{
 	font-family:  "Homer Simpson UI";
+	color: #000000;
 	font-size: 30px;
 	font-weight: bolder;
 }
-body{
-	background-color: #ffffff;
-}
 
-
-/*Estilo de menu de canales*/
-
-.btnCanal {
-	text-decoration: none;
-	width: 200px;
-	padding: 5px;
-	font-weight: 90;
-	font-size: 20px;
+h4{
+	font-family:  "Homer Simpson UI";
 	color: #ffffff;
-	background-color: #1883ba;
-	border-radius: 6px;
-	border: 2px solid #0016b0;
-	text-align: center;
+	font-size: 27px;
+	font-weight: bolder;
+}
+
+h6{
+	font-family:  "Homer Simpson UI";
+	color: #000000;
+	font-size: 25px;
+	font-weight: bolder;
+}
+
+body{
+	background-color:#FBFCFC;
+	/*#f3f1ef*/
+}
+
+
+/*Estilos del glosario*/
+.search-icon{
+    background: url("../images/search.png");
+    width: 32px;
+    height: 32px;
+    display: block;
+ }
+
+.barraicono{
+	background-color:#000E29;
+	border-radius: 25px;
+	width: 260px;
 
 }
 
-.btnCanal:hover{
-	color: #1883ba;
-    background-color: #ffffff;
-
+.scroll-info{
+    width: 800px;
+    height: 400px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background: #cdd0d4;
+    text-align: justify;
+   overflow-y: scroll;
+ }
+ .btnNC{
+    height: 40px;
+    margin-bottom: 15px;
+    background:#F4511E;
+    border:2px solid #F4511E;
+	font-size: 19px;
+	color: white;
+	font-family:"Optima";
+ }
+ .btnNC:hover{
+	color: #ffffff;
+    background-color: #AB2F09;
+    border: 2px solid #AB2F09;
 }
 
+ #elementos{
+    height: 500px;
+    overflow-y: scroll;
+
+ }
+
+ #elementos button{
+ 	width: 150px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+#buscador{
+    margin-right: 3px;
+ }
+
+#txt-form-def{
+    width: 500px;
+    height: 200px;
+    text-align: justify;
+    overflow-y: scroll;
+    resize: none;
+ }
+
+#txt-form-nombre{
+    width: 300px;
+ }
+
+#formulario{
+    display: none;
+ }
+.contenedor{
+    width: 600px;
+    height: 500px;
+    background: #E5E7E9;
+    display: block;
+ }
+.fondo-formulario{
+    height: 700px;
+ }
 
 
 
+/* Estilos de separación*/
+.mt{
+	margin-top: 20px;
+}
 
+.mb{
+	margin-bottom:90px;
+}
+.mb65{
+	margin-bottom:65px;
+}
+.mb85{
+	margin-bottom:85px;
+}
+.mb30{
+	margin-bottom:230px;
+}
+.mb20{
+	margin-bottom:20px;
+}
+.ml{
+	margin-left:250px;
+}
+.ml170{
+	margin-left:170px;
+}
+.number{
+	width:100px;
+	height: 30px;
+}

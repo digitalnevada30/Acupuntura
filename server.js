@@ -87,6 +87,9 @@ app.on('window-all-closed',(event) => {
               await fire.uploadFile(prop, tmp);
             }
           }
+          //subimos el archivo config
+          await fire.uploadFile('config',resp);
+          console.log('config');
           //actualizamos la fecha
           await fire.updateDate(resp['fecha']);
         }

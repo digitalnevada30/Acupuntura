@@ -47,13 +47,16 @@ window.onload = function(){
         let arrLLaves = [];
         for(let elemento in this.datos){
           arrLLaves.push(elemento);
+          //arrLLaves.push(this.datos[elemento]);
         }
         arrLLaves.sort();
         this.botones = [];
         for(let i=0 ; i < arrLLaves.length ; i++){
+          console.log(arrLLaves[i]);
           let tmp = {id: arrLLaves[i], valor: this.datos[arrLLaves[i]]['nombre']}
           this.botones.push(tmp);
         }
+        console.log(this.botones);
       },
       abrirCanal: function(evento, id){
         Modelo.abrirCanal(id);

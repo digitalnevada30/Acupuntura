@@ -5,6 +5,7 @@ const fire = require('./Firestore.js');
 const admJSON = require('./AdministradorJSON');
 const server = require('./server');
 const internetAvailable = require('internet-available');
+const http = require('http');
 
 exports.Express = function(){
 	this.expressApp = express();
@@ -12,15 +13,20 @@ exports.Express = function(){
 	this.expressApp.use(bodyParser.json()); //support json encoded bodies
 	this.expressApp.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
-	this.app = null;
+	//this.app = null;
+	this.server = http.createServer(this.expressApp);
 
 	this.init = function(){
 		/*this.expressApp.use(express.static(path.join(__dirname, 'public')));
 		this.expressApp.use(bodyParser.json()); //support json encoded bodies
 		this.expressApp.use(bodyParser.urlencoded({extended: true})); //support encoded bodies*/
 
-		this.expressApp.listen(3000, function(){
+		/*this.expressApp.listen(3000, function(){
 		  console.log('Example app listening on port 3000');
+		});*/
+		this.server.listen(3000, 'localhost');
+		this.server.on('listening', function(){
+			console.log('Example app listening on port 3000');
 		});
 	}
 

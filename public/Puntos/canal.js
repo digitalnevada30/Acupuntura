@@ -14,8 +14,8 @@ window.onload = function(){
 					})
 			});
 		},
-		abrirCanal: function(nombre){
-			location.replace('http://127.0.0.1:3000/Puntos?name=' + nombre);
+		abrirCanal: function(nombre, grupo){
+			location.replace('http://127.0.0.1:3000/Puntos?name=' + nombre + '&grupo=' + grupo);
 		},
 		regresar: function(){
 			location.replace('http://127.0.0.1:3000/Evaluativo');
@@ -28,12 +28,13 @@ window.onload = function(){
 			return {
 				botones: [],
 				nombreArchivo: '',
+				grupo: -1,
 				datos: {}
 			}
 		},
 		methods:{
 			abrirCanal: function(evento, nombre){
-				Modelo.abrirCanal(nombre);
+				Modelo.abrirCanal(nombre, this.grupo);
 			},
 			regresar: function(evento){
 				Modelo.regresar();
@@ -55,6 +56,8 @@ window.onload = function(){
 			}
 		},
 		created: function(){
+			//window.location.search.substr(1).split('=')[1].split('-')[1];
+			this.grupo = window.location.search.substr(1).split('=')[1];
 			this.obtenerCanales();
 		},
 		template: `

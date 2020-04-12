@@ -3,40 +3,87 @@ window.onload = function(){
     abrirModelo: function(){
       location.replace('http://127.0.0.1:3000/Modelo/canal.html');
     },
-    abrirPuntos: function(){
-      location.replace('http://127.0.0.1:3000/Puntos/canal.html');
+    abrirPuntos: function(grupo){
+      location.replace('http://127.0.0.1:3000/Puntos/canal.html?group=' + grupo);
     },
     regresar: function(){
       location.replace("http://127.0.0.1:3000/init");
+    },
+    obtenerGrupos: function(){
+      return new Promise(resolve => {
+        let data = {
+          name: 'config.json'
+        };
+
+        axios.get('/testRead', {
+          params: data
+        }).then(function(res){
+          console.log(res.data['grupos']);
+          resolve(res.data['grupos']);
+        }).catch(function(error){
+          resolve({error:'Error al obtener Grupos'});
+        })
+      });
     }
   };
 
   const evaluativoApp = Vue.component('evaluativoApp', {
+    data:function(){
+      return {
+        grupos: [],
+        grupo: ''
+      };
+    },
     methods: {
+      obtenerGrupos: async function(){
+        this.grupos = await Modelo.obtenerGrupos();
+        console.log('grupos:');
+        console.log(this.grupos);
+      },
       abrirModelo: function(){
         Modelo.abrirModelo();
       },
       abrirPuntos: function(){
-        Modelo.abrirPuntos();
+        if(this.grupo === ''){
+          swal('Error', 'Selecciona un grupo', 'error');
+        }else{
+          Modelo.abrirPuntos(this.grupo);
+        }
       },
       regresar: function(){
         Modelo.regresar();
       }
     },
+    created: function(){
+      this.obtenerGrupos();
+      console.log(this.grupos);
+    },
     template:`
       <div class="container">
-        <div class="row justify-content-center" style="margin-bottom:90px;">
+        <div class="row justify-content-center" style="margin-bottom:30px;">
           <div class="col-md-10">
             <h2>Seleccionar el módulo evaluativo</h2>
           </div>
         </div>
 
+        <div class="row justify-content-center" style="margin-bottom:60px;">
+          <div class="col-md-3">
+            <h5>Seleccionar Grupo:</h5>
+          </div>
+          <div class="col-md-4">
+            <select class="custom-select" v-model="grupo">
+              <option value="" selected>Elegir...</option>
+              <option v-for="(elemento,indice) in grupos" :value="indice">{{elemento['nombre']}}</option>
+            </select>
+          </div>
+        </div>
+
         <div class="row justify-content-around">
-          <div class="col-md-4"> <!--Primer boton-->
+          <div class="col-md-4">
               <div class="row p-1">
                 <button type="button" class="btnMain btn btn-success" id="btnModelo" v-on:click="abrirModelo">Cuerpo humano</button>
               </div>
-            </div> <!--fin primer boton-->
+            </div>
             <div class="col-md-4">
               <div class="row p-1">
                 <button type="button" class="btn btn-success btnMain" id="btnJuego" style="margin-bottom:30px;" v-on:click="abrirPuntos">Juego de puntos</button>

@@ -1,5 +1,51 @@
 window.onload = function(){
   const Modelo = {
+    guardarReportes: function(nombreArchivo, informacion){
+      return new Promise(resolve => {
+        let datos = {
+          name: nombreArchivo,
+          data: informacion
+        };
+        axios.post('/testWrite',{
+          params: datos
+        }).then(res => {resolve()})
+        .catch(error => {
+          swal('Error', 'No hemos podido guardar los archivos locales', 'error');
+          resolve();
+        })
+      });
+    },
+    obtenerReportes: function(){
+      return new Promise(resolve => {
+        let data = {
+          name: 'reportes.json'
+        };
+
+        axios.get('/testRead', {
+          params: data
+        }).then(function(res){
+          resolve(res.data);
+        }).catch(function(error){
+          resolve({error:'Error al obtener Grupos'});
+        })
+      });
+    },
+    obtenerGrupos: function(){
+      return new Promise(resolve => {
+        let data = {
+          name: 'config.json'
+        };
+
+        axios.get('/testRead', {
+          params: data
+        }).then(function(res){
+          console.log(res.data['grupos']);
+          resolve(res.data['grupos']);
+        }).catch(function(error){
+          resolve({error:'Error al obtener Grupos'});
+        })
+      });
+    },
     obtenerInfoCanal: function(canal){
       return new Promise(resolve => {
         let data = {name : "config.json"};
@@ -38,8 +84,8 @@ window.onload = function(){
   			.catch({error:"Got an error"});
   		});
     },
-    regresar: function(){
-      location.replace('http://127.0.0.1:3000/Puntos/canal.html');
+    regresar: function(grupo){
+      location.replace('http://127.0.0.1:3000/Puntos/canal.html?grupo=' + grupo);
     }
   };
 
@@ -47,6 +93,8 @@ window.onload = function(){
     data: function(){
       return {
         canal: '',
+        grupo: '',
+        grupos: [],
         informacionCanal: {},
         tipo: '',
         puntoElementos: {},
@@ -100,22 +148,46 @@ window.onload = function(){
         ev.preventDefault();
       },
       regresar: function(){
-        Modelo.regresar();
+        Modelo.regresar(this.grupo);
       },
-      evaluar: function(){
+      evaluar: async function(){
         var divanswer = document.getElementById('answer');
         if(divanswer.childNodes.length !== 0){
     			swal('Error', 'Favor de completar el ejercicio', 'error');
     		}else{
+          let formatoRespuestas = {
+            fecha: Date.now(),
+            canal: this.canal,
+            fuego: 0,
+            tierra: 0,
+            metal: 0,
+            agua: 0,
+            madera: 0,
+            afuera: 0,
+            sumaCorrectas: 0,
+            total: 0,
+
+          };
+
+          formatoRespuestas['total'] = Object.keys(this.puntoAfuera).length;
+          console.log('----- Evaluando ------');
+          console.log(formatoRespuestas);
+          console.log('----------------------');
     			let respCorrectas = 0;
 
           //checamos los circulos
     			for(let el in this.elementos){
     				console.log('canal: ' + el);
+            console.log('tamEL: ' + document.getElementById(el).childNodes.length);
+            formatoRespuestas['total'] += document.getElementById(el).childNodes.length;
     				for(let i=0 ; i < document.getElementById(el).childNodes.length ; i++){
     					//resp: document.getElementById(el + i).childNodes[0].innerHTML
     					let nombre = document.getElementById(el + i).childNodes[0].innerHTML;
     					if(this.checkAnswer(this.elementos[el], nombre)){
+                //agregar sumaCorrectas
+                formatoRespuestas['sumaCorrectas'] += 1;
+                //agregar elemento
+                formatoRespuestas[el] += 1;
     						console.log('Correcta: ' + el + ' - ' + nombre);
     						respCorrectas++;
     					}
@@ -127,25 +199,45 @@ window.onload = function(){
             let id = 'afuera' + elem;
             let nombre = document.getElementById(id).childNodes[0].innerHTML;
             if(nombre == this.puntoAfuera[elem]){
+              formatoRespuestas['afuera'] += 1;
               respCorrectas++;
             }
           }
+          //guardamos los resultados
+          //obtenemos el grupo
+          let reportes = await Modelo.obtenerReportes();
+          let grupoTmp = this.grupos[this.grupo]['nombre'];
+          console.log(grupoTmp);
+          if(reportes[grupoTmp] === undefined){
+            console.log('SIN ELEMENTO');
+            reportes[grupoTmp] = {
+              tipo1: [],
+              tipo2: []
+            };
+            console.log(reportes);
+          }
+
+          reportes[grupoTmp]['tipo1'].push(formatoRespuestas);
+
+          //guardamos os reportes
+          await Modelo.guardarReportes('reportes.json', reportes);
+
 
     			let calificacion = respCorrectas*10.0/this.respuestas.length;
           if(calificacion > 8.0){
             swal('¡Felicidades!', 'Marcador: ' + respCorrectas + '/' + this.respuestas.length + '\n' + 'calificación: ' + calificacion.toFixed(1), 'success')
               .then((value) => {
-                location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal);
+                location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal + '&grupo=' + this.grupo);
               });
           }else if(calificacion >= 6.0 && calificacion <= 8.0){
             swal('Practiquemos un poco más', 'Marcador: ' + respCorrectas + '/' + this.respuestas.length + '\n' + 'calificación: ' + calificacion.toFixed(1), 'info')
             .then((value) => {
-              location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal);
+              location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal + '&grupo=' + this.grupo);
             });
           }else{
             swal('Podemos hacerlo mejor', 'Marcador: ' + respCorrectas + '/' + this.respuestas.length + '\n' + 'calificación: ' + calificacion.toFixed(1), 'error')
             .then((value) => {
-              location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal);
+              location.replace('http://127.0.0.1:3000/Puntos?name=' + this.canal + '&grupo=' + this.grupo);
             });
           }
     		}
@@ -158,11 +250,18 @@ window.onload = function(){
     			}
     		}
     		return false;
-    	}
+    	},
+      obtenerGrupos: async function(){
+        this.grupos = await Modelo.obtenerGrupos();
+        console.log('grupos:');
+        console.log(this.grupos);
+      }
     },
     created: async function(){
       let respuestas = [];
-      this.canal = window.location.search.substr(1).split('=')[1];
+      this.canal = window.location.search.substr(1).split('&')[0].split('=')[1];
+      this.grupo = window.location.search.substr(1).split('&')[1].split('=')[1];
+      this.obtenerGrupos();
       this.informacionCanal = await Modelo.obtenerInfoCanal(this.canal);
 
       this.tipo = this.informacionCanal['tipo'];

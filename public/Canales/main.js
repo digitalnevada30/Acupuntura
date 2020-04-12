@@ -68,10 +68,20 @@ window.onload = function(){
     computed:{
       setInformacion: function(){
         let contenido = ''
-        if(this.puntoSeleccionado === ''){
+        let informacion = [];
+        if(this.puntoSeleccionado === '' || this.puntoSeleccionado === '-'){
           return contenido;
         }else{
-          for(let elem in this.informacionPuntos[this.puntoSeleccionado]){
+          //convertir la informacion del punto en un arreglo
+          informacion.push({nombre:this.informacionPuntos[this.puntoSeleccionado]['nombre']});
+          informacion.push({localizacion:this.informacionPuntos[this.puntoSeleccionado]['localizacion']});
+          informacion.push({funcion:this.informacionPuntos[this.puntoSeleccionado]['funcion']});
+          informacion.push({indicaciones:this.informacionPuntos[this.puntoSeleccionado]['indicaciones']});
+          informacion.push({observaciones:this.informacionPuntos[this.puntoSeleccionado]['observaciones']});
+          informacion.push({importancia:this.informacionPuntos[this.puntoSeleccionado]['importancia']});
+
+          for(let i in informacion){
+            let elem = Object.keys(informacion[i])[0];
             let temp='';
       			switch (elem){
       				case 'nombre':
@@ -101,7 +111,7 @@ window.onload = function(){
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <p>`+ this.informacionPuntos[this.puntoSeleccionado][elem] +`</p>
+                  <p>`+ informacion[i][elem] +`</p>
                 </div>
               </div>
             `;
@@ -142,7 +152,9 @@ window.onload = function(){
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-5">
-            <p>Espacio para colocar el modelo</p>
+            <div style="width:100%; height:600px; background:blue;">
+              <!--<img src="../images/Modelos/bazo.jpeg" width="100%">-->
+            </div>
           </div>
           <div class="col-md-7">
             <div class="row">

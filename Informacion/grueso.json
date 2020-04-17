@@ -1,1 +1,63 @@
-{"elementos":{"fuego":["Yangxi"],"agua":["Erjian","Hijo"],"metal":["Shangyang"],"tierra":["Quchi","Madre"],"madera":["Sanjian"]},"puntos":{"Quchi":{"nombre":"El estanque de la curva.","importancia":4,"indicaciones":"Parestesia, parálisis y reumatismo en miembros superiores, edema y dolor del codo, codo torcido, falta de movimientos del codo.","observaciones":"Punto He-Mar. Elemento Tierra. Punto tonificante del canal. Punto madre. Punto He-Mar inferior del intestino grueso es Shangjuxu (E 37) indicado para trastornos del intestino grueso.","funcion":"Dispersa el calor, hace pasar la energía a las vísceras, las desobstaculiza, favorece la articulación y remueve el viento húmedo.","localizacion":"Con el codo flexionado se halla en la terminación del pliegue externo del codo. Entre Chize y cóndilo externo de húmero."},"Yangxi":{"importancia":1,"indicaciones":"Cefalea, odontalgia, ojos rojos y edematosos, sordera y tinnitus, inflamación de garganta, dolor de articulación de la muñeca.","observaciones":"Punto Jing-Río. Elemento Fuego.","funcion":"Elimina el viento caliente, aclara y dispersa el fuego.","localizacion":"Sobre el lado radial del dorso de la muñeca, en el fondo de la tabaquera anatómica; entre el extensor corto y largo del pulgar.","nombre":"Corriente externa."},"Erjian":{"funcion":"Drena el viento y aclara el calor. Es un punto dispersante. Actúa sobre la faringe y es antiálgico.","localizacion":"En el lado radial del dedo índice, distal de la articulación metacarpofalángica del dedo índice en su parte distal, donde se une la piel roja con la piel blanca.","nombre":"2a. Depresión o intervalo.","importancia":1,"indicaciones":"Odontalgia, epistaxis, inflamación del cuello, enfermedades febriles, desviaciones de boca y ojo, hombro y espalda dolorosa, cefalea.","observaciones":"Punto Ying-Manantial. Elemento Agua, Punto Hijo, dispersante."},"Sanjian":{"funcion":"Aclara el canal de Intestino Grueso y dispersa el calor. Hace pasar la energía del Intestino Grueso al abdomen.","localizacion":"Sobre el lado radial del dedo índice, en una depresión proximal de la articulación metacarpofalángica.","nombre":"3a. Depresión o 3er. Intervalo.","importancia":1,"indicaciones":"Inflamación y dolor de faringe. Amigdalitis. Odontalgias inferiores. Dolor agudo de ojo, boca y labios secos.","observaciones":"Punto Shu-Arroyo. Elemento Madera."},"Shangyang":{"indicaciones":"Para pérdida de la conciencia, odontalgias inferiores, amigdalitis, tinnitus, sordera, faringitis, vómito y diarrea aguda, fiebre alta (sangrar el punto).","observaciones":"Punto Jing-Pozo, elemento metal.","funcion":"Aclara la energía y el calor del canal. Punto antiálgico de la garganta. Despierta el espíritu; abre los orificios de la cabeza.","localizacion":"En el lado radial del dedo índice, 0.1 cun posterior al ángulo ungueal.","nombre":"Sonido Metálico Externo.","importancia":1}},"afuera":{"SHU":"Dachangshu","YUAN":"Hegu","XI":"Wenliu","LUO":"Pianli","MU":"Tianshu"}}
+{
+  "elementos": {
+    "fuego": ["Yangxi"],
+    "agua": ["Erjian", "Hijo"],
+    "metal": ["Shangyang"],
+    "tierra": ["Quchi", "Madre"],
+    "madera": ["Sanjian"]
+  },
+  "puntos": {
+    "Quchi": {
+      "nombre": "El estanque de la curva.",
+      "importancia": 4,
+      "indicaciones": "Parestesia, parálisis y reumatismo en miembros superiores, edema y dolor del codo, codo torcido, falta de movimientos del codo.",
+      "observaciones": "Punto He-Mar. Elemento Tierra. Punto tonificante del canal. Punto madre. Punto He-Mar inferior del intestino grueso es Shangjuxu (E 37) indicado para trastornos del intestino grueso.",
+      "funcion": "Dispersa el calor, hace pasar la energía a las vísceras, las desobstaculiza, favorece la articulación y remueve el viento húmedo.",
+      "localizacion": "Con el codo flexionado se halla en la terminación del pliegue externo del codo. Entre Chize y cóndilo externo de húmero.",
+      "posicion": 1
+    },
+    "Yangxi": {
+      "importancia": 1,
+      "indicaciones": "Cefalea, odontalgia, ojos rojos y edematosos, sordera y tinnitus, inflamación de garganta, dolor de articulación de la muñeca.",
+      "observaciones": "Punto Jing-Río. Elemento Fuego.",
+      "funcion": "Elimina el viento caliente, aclara y dispersa el fuego.",
+      "localizacion": "Sobre el lado radial del dorso de la muñeca, en el fondo de la tabaquera anatómica; entre el extensor corto y largo del pulgar.",
+      "nombre": "Corriente externa.",
+      "posicion": 2
+    },
+    "Erjian": {
+      "funcion": "Drena el viento y aclara el calor. Es un punto dispersante. Actúa sobre la faringe y es antiálgico.",
+      "localizacion": "En el lado radial del dedo índice, distal de la articulación metacarpofalángica del dedo índice en su parte distal, donde se une la piel roja con la piel blanca.",
+      "nombre": "2a. Depresión o intervalo.",
+      "importancia": 1,
+      "indicaciones": "Odontalgia, epistaxis, inflamación del cuello, enfermedades febriles, desviaciones de boca y ojo, hombro y espalda dolorosa, cefalea.",
+      "observaciones": "Punto Ying-Manantial. Elemento Agua, Punto Hijo, dispersante.",
+      "posicion": 3
+    },
+    "Sanjian": {
+      "funcion": "Aclara el canal de Intestino Grueso y dispersa el calor. Hace pasar la energía del Intestino Grueso al abdomen.",
+      "localizacion": "Sobre el lado radial del dedo índice, en una depresión proximal de la articulación metacarpofalángica.",
+      "nombre": "3a. Depresión o 3er. Intervalo.",
+      "importancia": 1,
+      "indicaciones": "Inflamación y dolor de faringe. Amigdalitis. Odontalgias inferiores. Dolor agudo de ojo, boca y labios secos.",
+      "observaciones": "Punto Shu-Arroyo. Elemento Madera.",
+      "posicion": 4
+    },
+    "Shangyang": {
+      "indicaciones": "Para pérdida de la conciencia, odontalgias inferiores, amigdalitis, tinnitus, sordera, faringitis, vómito y diarrea aguda, fiebre alta (sangrar el punto).",
+      "observaciones": "Punto Jing-Pozo, elemento metal.",
+      "funcion": "Aclara la energía y el calor del canal. Punto antiálgico de la garganta. Despierta el espíritu; abre los orificios de la cabeza.",
+      "localizacion": "En el lado radial del dedo índice, 0.1 cun posterior al ángulo ungueal.",
+      "nombre": "Sonido Metálico Externo.",
+      "importancia": 1,
+      "posicion": 5
+    }
+  },
+  "afuera": {
+    "SHU": "Dachangshu",
+    "YUAN": "Hegu",
+    "XI": "Wenliu",
+    "LUO": "Pianli",
+    "MU": "Tianshu"
+  }
+}

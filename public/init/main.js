@@ -1,5 +1,4 @@
 window.onload = function(){
-
 	/* - - - - - MODELO - - - - - */
 	const Modelo = {
 		subirInformacion: function(){
@@ -99,7 +98,8 @@ window.onload = function(){
 			return{
 				titulo : 'Acupuntura',
 				urlIconoWifi : '../images/conn.png',
-				conexion: false
+				conexion: false,
+				habilitar: true
 			}
 		},
 		methods : {
@@ -171,6 +171,7 @@ window.onload = function(){
 						}
 					}
 				}
+				this.habilitar = false;
 			}
 		},
 
@@ -184,12 +185,12 @@ window.onload = function(){
 		      <div class="row justify-content-around">
 		          <div class="col-md-4">
 		            <div class="row p-1">
-		              <button type="button" class="btnMain btn btn-success" v-on:click="cargarModulo($event, 'edu')">Módulo Educativo</button>
+		              <button type="button" class="btnMain btn" v-on:click="cargarModulo($event, 'edu')" v-bind:disabled="habilitar">Módulo Educativo</button>
 		            </div>
 		          </div>
 		          <div class="col-md-4">
 		            <div class="row p-1">
-		              <button type="button" class="btn btn-success btnMain" v-on:click="cargarModulo($event,'eva')">Módulo Evaluativo</button>
+		              <button type="button" class="btn btnMain" v-on:click="cargarModulo($event,'eva')" v-bind:disabled="habilitar">Módulo Evaluativo</button>
 		            </div>
 		          </div>
 		      </div>
@@ -198,10 +199,12 @@ window.onload = function(){
 		//una vez creados los componentes solicitamos la evaluacion de las descargas
 		created: function(){
 			this.comparaFecha();
+			//habilita botones
+			//this.habilitar = false;
 		}
 	});
 
-	const app = new Vue({
+	const App = new Vue({
 	  el: '#app',
 	  components : {
 	  	'init-app' : initApp

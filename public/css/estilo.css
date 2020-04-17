@@ -31,6 +31,50 @@
 	margin-bottom:30px;
 }
 
+/*Juego Modelo*/
+.input-modelo-correcto{
+	border-color: #00fc32 !important;
+}
+.input-modelo-error{
+	border-color: #f70a0a !important;
+}
+.input-modelo{
+	width:50px;
+	height: 30px;
+	border: 3px solid #000;
+	border-radius: 50px;
+	text-align: right;
+}
+.elemento-modelo-pregunta{
+	width: 200px;
+	height: 50px;
+	border: 3px solid;
+	background: #2e042e;
+	border-color: #30fcff;
+	color: white;
+	padding: 2px 0px 2px 10px;
+	margin: 10px 10px 10px 10px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.canal-scroll-modelo{
+	width: 100%;
+	height: 530px;
+	margin-bottom: 5px;
+	padding-top: 15px;
+	text-align: justify;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: #e9ecef;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
 /*educativo*/
 .educativo-canal{
 	height: 400px;

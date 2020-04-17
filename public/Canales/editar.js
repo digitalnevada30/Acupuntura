@@ -93,14 +93,16 @@ window.onload = function(){
       //obtenemos la informacion del canal
       this.datos = await Modelo.obtenerInformacionCanal(this.canal);
       if(this.datos['error']){
-        swal('Error', this.datos['error'], 'error');
-        Modelo.regresar(this.canal);
+        swal('Error', this.datos['error'], 'error'),then((value) => {
+          Modelo.regresar(this.canal);
+        })
       }
       //obtenemos la informacion del punto
       this.informacionPunto = await Modelo.obtenerInformacionPunto(this.datos['archivo'], this.punto);
       if(this.informacionPunto['error']){
-        swal('Error', this.informacionPunto['error'], 'error');
-        Modelo.regresar(this.canal);
+        swal('Error', this.informacionPunto['error'], 'error').then((value) => {
+          Modelo.regresar(this.canal);
+        })
       }
 
       //cambiamos <br> por \n para visualizar los saltos de linea

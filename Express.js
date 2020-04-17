@@ -17,13 +17,6 @@ exports.Express = function(){
 	this.server = http.createServer(this.expressApp);
 
 	this.init = function(){
-		/*this.expressApp.use(express.static(path.join(__dirname, 'public')));
-		this.expressApp.use(bodyParser.json()); //support json encoded bodies
-		this.expressApp.use(bodyParser.urlencoded({extended: true})); //support encoded bodies*/
-
-		/*this.expressApp.listen(3000, function(){
-		  console.log('Example app listening on port 3000');
-		});*/
 		this.server.listen(3000, 'localhost');
 		this.server.on('listening', function(){
 			console.log('Example app listening on port 3000');
@@ -177,11 +170,7 @@ exports.Express = function(){
 	  //write the config file
 	  var datos = {
 	    name : 'config.json',
-	    data : {
-	      canales: resp['canales'],
-	      glosario: resp['glosario'],
-	      fecha : resp['fecha']
-	    }
+	    data : resp
 	  };
 	  var ans = await admJSON.writeData(datos);
 	  if(ans['error']){

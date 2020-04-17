@@ -1,1 +1,63 @@
-{"afuera":{"MU":"Riyue","SHU":"Danshu","YUAN":"Qiuxu","XI":"Waiqiu","LUO":"Guangming"},"elementos":{"agua":["Xiaxi","Madre"],"metal":["Qiaoyin"],"tierra":["Yanglingquan"],"madera":["Linqi"],"fuego":["Yangfu","Hijo"]},"puntos":{"Linqi del pie":{"nombre":"Mirar la lágrima en pie.","importancia":2,"indicaciones":"Dolor en ángulo externo del ojo, mareo, dolor costal, forúnculos, linfangitis, tuberculosis o escrófula, dolor e inflamación de los senos, problemas de menstruación.","observaciones":"Es punto arroyo del meridiano Shaoyang del pie, punto de apertura del meridiano Dai. Punto elemento madera.","funcion":"Aclara cabeza y ojos, armoniza tórax y costillas, drena hígado y elimina el viento.","localizacion":"Distal de la articulación tarsometatarsiana en la unión del 4o. y 5o. metatarsiano."},"Xiaxi":{"localizacion":"En el dorso del pie, entre el 4o. y 5o. ortejo. Distal a la articulación metatarsofalángica.","nombre":"Lugar de paso de corriente.","importancia":1,"indicaciones":"Excelente para dolor de cabeza hemicránea, dolor en sien, acúfenos.","observaciones":"Es el punto manantial y elemento Agua del canal.","funcion":"Elimina el viento y dolor en general, aclara la cabeza y los ojos, armoniza las costillas y el tórax."},"Yanglingquan":{"funcion":"Aclara vesícula biliar e hígado, permeabiliza tendones y colaterales, armoniza la articulación de la rodilla, estimula la contracción de la vesícula biliar.","localizacion":"En la depresión antero-inferior de la cabeza del peroné.","nombre":"Fuente alta del Yang.","importancia":4,"indicaciones":"Hemiplejia, síndrome obstructivo y distrofia de miembro inferior, analgesia, dolor e inflamación de rodilla, dolor en parrilla costal, boca amarga y vómito.","observaciones":"Es punto mar del meridiano Shaoyang de pie. Es uno de los 8 puntos de influencia, corresponde a los tendones. Punto elemento Tierra."},"Yangfu":{"funcion":"Aclara hígado y vesícula biliar, permeabiliza canales y colaterales.","localizacion":"A 4 cun por arriba del maléolo externo, en el borde anterior del peroné.","nombre":"Hueso del peroné.","importancia":2,"indicaciones":"Cefalea hemicránea, dolor en el ángulo externo del ojo, dolor debajo de la axila, forunculosis, dolor en la parte externa del miembro inferior y en la parte externa de las costillas.","observaciones":"Es el punto río del meridiano Shaoyang del pie, punto Hijo y elemento Fuego."},"Qiaoyin del pie":{"nombre":"Apertura o agujero del yin.","importancia":1,"indicaciones":"Dolor de cabeza, irritabilidad cardiaca, acúfenos, sordera, síndrome de obstrucción, rigidez de lengua, dolor costal, problemas menstruales.","observaciones":"Es el punto pozo del canal y elemento metal.","funcion":"Drena el calor de hígado y vesícula biliar, armoniza las costillas, enfermedades de los agujeros de la cabeza.","localizacion":"En el ángulo ungueal externo del 4o. ortejo, a 0.1 cun por detrás del ángulo ungueal."}}}
+{
+  "afuera": {
+    "MU": "Riyue",
+    "SHU": "Danshu",
+    "YUAN": "Qiuxu",
+    "XI": "Waiqiu",
+    "LUO": "Guangming"
+  },
+  "elementos": {
+    "agua": ["Xiaxi", "Madre"],
+    "metal": ["Qiaoyin"],
+    "tierra": ["Yanglingquan"],
+    "madera": ["Linqi"],
+    "fuego": ["Yangfu", "Hijo"]
+  },
+  "puntos": {
+    "Linqi del pie": {
+      "nombre": "Mirar la lágrima en pie.",
+      "importancia": 2,
+      "indicaciones": "Dolor en ángulo externo del ojo, mareo, dolor costal, forúnculos, linfangitis, tuberculosis o escrófula, dolor e inflamación de los senos, problemas de menstruación.",
+      "observaciones": "Es punto arroyo del meridiano Shaoyang del pie, punto de apertura del meridiano Dai. Punto elemento madera.",
+      "funcion": "Aclara cabeza y ojos, armoniza tórax y costillas, drena hígado y elimina el viento.",
+      "localizacion": "Distal de la articulación tarsometatarsiana en la unión del 4o. y 5o. metatarsiano.",
+      "posicion": 1
+    },
+    "Xiaxi": {
+      "localizacion": "En el dorso del pie, entre el 4o. y 5o. ortejo. Distal a la articulación metatarsofalángica.",
+      "nombre": "Lugar de paso de corriente.",
+      "importancia": 1,
+      "indicaciones": "Excelente para dolor de cabeza hemicránea, dolor en sien, acúfenos.",
+      "observaciones": "Es el punto manantial y elemento Agua del canal.",
+      "funcion": "Elimina el viento y dolor en general, aclara la cabeza y los ojos, armoniza las costillas y el tórax.",
+      "posicion": 2
+    },
+    "Yanglingquan": {
+      "funcion": "Aclara vesícula biliar e hígado, permeabiliza tendones y colaterales, armoniza la articulación de la rodilla, estimula la contracción de la vesícula biliar.",
+      "localizacion": "En la depresión antero-inferior de la cabeza del peroné.",
+      "nombre": "Fuente alta del Yang.",
+      "importancia": 4,
+      "indicaciones": "Hemiplejia, síndrome obstructivo y distrofia de miembro inferior, analgesia, dolor e inflamación de rodilla, dolor en parrilla costal, boca amarga y vómito.",
+      "observaciones": "Es punto mar del meridiano Shaoyang de pie. Es uno de los 8 puntos de influencia, corresponde a los tendones. Punto elemento Tierra.",
+      "posicion": 3
+    },
+    "Yangfu": {
+      "funcion": "Aclara hígado y vesícula biliar, permeabiliza canales y colaterales.",
+      "localizacion": "A 4 cun por arriba del maléolo externo, en el borde anterior del peroné.",
+      "nombre": "Hueso del peroné.",
+      "importancia": 2,
+      "indicaciones": "Cefalea hemicránea, dolor en el ángulo externo del ojo, dolor debajo de la axila, forunculosis, dolor en la parte externa del miembro inferior y en la parte externa de las costillas.",
+      "observaciones": "Es el punto río del meridiano Shaoyang del pie, punto Hijo y elemento Fuego.",
+      "posicion": 4
+    },
+    "Qiaoyin del pie": {
+      "nombre": "Apertura o agujero del yin.",
+      "importancia": 1,
+      "indicaciones": "Dolor de cabeza, irritabilidad cardiaca, acúfenos, sordera, síndrome de obstrucción, rigidez de lengua, dolor costal, problemas menstruales.",
+      "observaciones": "Es el punto pozo del canal y elemento metal.",
+      "funcion": "Drena el calor de hígado y vesícula biliar, armoniza las costillas, enfermedades de los agujeros de la cabeza.",
+      "localizacion": "En el ángulo ungueal externo del 4o. ortejo, a 0.1 cun por detrás del ángulo ungueal.",
+      "posicion": 5
+    }
+  }
+}

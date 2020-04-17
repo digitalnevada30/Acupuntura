@@ -15,7 +15,7 @@ window.onload = function(){
 			});
 		},
 		abrirCanal: function(nombre, grupo){
-			location.replace('http://127.0.0.1:3000/Puntos?name=' + nombre + '&grupo=' + grupo);
+			location.replace('http://127.0.0.1:3000/Modelo?name=' + nombre + '&grupo=' + grupo);
 		},
 		regresar: function(){
 			location.replace('http://127.0.0.1:3000/Evaluativo');
@@ -63,6 +63,7 @@ window.onload = function(){
 		created: function(){
 			//window.location.search.substr(1).split('=')[1].split('-')[1];
 			this.grupo = window.location.search.substr(1).split('=')[1];
+      console.log(this.grupo);
 			this.obtenerCanales();
 		},
 		template: `

@@ -1,7 +1,7 @@
 window.onload = function(){
   const Modelo = {
-    abrirModelo: function(){
-      location.replace('http://127.0.0.1:3000/Modelo/canal.html');
+    abrirModelo: function(grupo){
+      location.replace('http://127.0.0.1:3000/Modelo/canal.html?group=' + grupo);
     },
     abrirPuntos: function(grupo){
       location.replace('http://127.0.0.1:3000/Puntos/canal.html?group=' + grupo);
@@ -41,7 +41,12 @@ window.onload = function(){
         console.log(this.grupos);
       },
       abrirModelo: function(){
-        Modelo.abrirModelo();
+        if(this.grupo === ''){
+          swal('Error', 'Selecciona un grupo', 'error');
+        }else{
+          //Modelo.abrirPuntos(this.grupo);
+          Modelo.abrirModelo(this.grupo);
+        }
       },
       abrirPuntos: function(){
         if(this.grupo === ''){

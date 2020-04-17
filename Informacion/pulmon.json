@@ -1,1 +1,62 @@
-{"elementos":{"agua":["Chize","Hijo"],"metal":["Jingqu"],"tierra":["Taiyuan","Madre","YUAN"],"madera":["Shaoshang"],"fuego":["Yuji"]},"puntos":{"Jingqu":{"funcion":"Aclara y despeja la energía, hace disminuir la energía del pulmón, dispersa el viento y libera la superficie del viento.","localizacion":"1 cun por arriba del pliegue transversal de la muñeca, en la depresión sobre el lado radial de la arteria radial, a nivel de la prominencia más alta de la apófisis estiloides del radio.","nombre":"Acueducto de irrigación o paso constante del canal.","importancia":1,"indicaciones":"Tos por inversión de la energía del pulmón, dolor torácico y del pecho en general. Parálisis de las cuerdas vocales. Enfermedad de calor sin sudor. Dolor de muñeca y mano.","observaciones":"Punto Jing-Río. Elemento Metal."},"Chize":{"importancia":2,"indicaciones":"Laringotraqueitis causada por calor o por frío, por asma. Neumonía, tuberculosis pulmonar, hemoptisis, epistaxis, pleuritis. Dolor e inflamación de faringe y laringe. Opresión del tórax. Calor en oleadas en cara, palmas.","observaciones":"Punto He-Mar, Elemento Agua, y dispersante del canal.","funcion":"Aclara el calor, dispersa la energía, abre el paso al agua (hace descender al agua en el caso de anuria), equilibra la energía del estómago, intestino grueso y del intestino delgado.","localizacion":"En el pliegue del codo, en el lado radial del tendón del músculo bíceps braquial.","nombre":"Estanque o charco."},"Shaoshang":{"importancia":1,"indicaciones":"Desmayo causado por el viento, cuadro de embolia cerebral. Vértigo y extenuación. Síncope y desvanecimiento.","observaciones":"Es el punto Jing-Pozo, elemento madera del canal.","funcion":"Despeja el calor, favorece a la faringe, salva a la energía exhausta e invertida, reaviva de la languidez. Para la pérdida del conocimiento.","localizacion":"En el ángulo ungueal radial del dedo pulgar, a 0.1 cun de la raíz de la uña.","nombre":"Pequeño tendero."},"Yuji":{"funcion":"Disipa el viento y lubrica la superficie, lubrica al pulmón, detiene la tos, favorece a la faringe y detiene el dolor.","localizacion":"Está a la mitad del primer metacarpiano, donde se une la piel roja de la palma con la piel blanca dorsal de la mano.","nombre":"Vientre de pescado.","importancia":2,"indicaciones":"Tos, vómito de sangre, fiebre, dolor de cabeza, cuando el sudor no brota, dolor de laringe.","observaciones":"Punto Ying-Manantial. Elemento Fuego."},"Taiyuan":{"importancia":4,"indicaciones":"Tos por deficiencia de energía del pulmón, tos con sangre, asma con jadeo, sensación de llenura y dolor en el tórax, faringe y laringe dolorosas y secas.","observaciones":"Punto Shu-Arroyo. Punto Yuan-Fuente. Elemento Tierra. Es uno de los 8 puntos de influencia, comanda a los vasos sanguíneos. Es el punto madre o tonificante de pulmón.","funcion":"Aclara y despeja la energía obstruida, estancada y/o invertida del pulmón, lubrica y favorece el funcionamiento de la faringe.","localizacion":"En el pliegue transversal de la muñeca, en la depresión del lado radial de la arteria radial, en la cara interna del tendón abductor externo del dedo pulgar y borde radial del trapecio.","nombre":"Abismo profundo"}},"afuera":{"LUO":"Lieque","MU":"Zhongfu","SHU":"Feishu","XI":"Kongzui"}}
+{
+  "elementos": {
+    "agua": ["Chize", "Hijo"],
+    "metal": ["Jingqu"],
+    "tierra": ["Taiyuan", "Madre", "YUAN"],
+    "madera": ["Shaoshang"],
+    "fuego": ["Yuji"]
+  },
+  "puntos": {
+    "Jingqu": {
+      "funcion": "Aclara y despeja la energía, hace disminuir la energía del pulmón, dispersa el viento y libera la superficie del viento.",
+      "localizacion": "1 cun por arriba del pliegue transversal de la muñeca, en la depresión sobre el lado radial de la arteria radial, a nivel de la prominencia más alta de la apófisis estiloides del radio.",
+      "nombre": "Acueducto de irrigación o paso constante del canal.",
+      "importancia": 1,
+      "indicaciones": "Tos por inversión de la energía del pulmón, dolor torácico y del pecho en general. Parálisis de las cuerdas vocales. Enfermedad de calor sin sudor. Dolor de muñeca y mano.",
+      "observaciones": "Punto Jing-Río. Elemento Metal.",
+      "posicion": 1
+    },
+    "Chize": {
+      "importancia": 2,
+      "indicaciones": "Laringotraqueitis causada por calor o por frío, por asma. Neumonía, tuberculosis pulmonar, hemoptisis, epistaxis, pleuritis. Dolor e inflamación de faringe y laringe. Opresión del tórax. Calor en oleadas en cara, palmas.",
+      "observaciones": "Punto He-Mar, Elemento Agua, y dispersante del canal.",
+      "funcion": "Aclara el calor, dispersa la energía, abre el paso al agua (hace descender al agua en el caso de anuria), equilibra la energía del estómago, intestino grueso y del intestino delgado.",
+      "localizacion": "En el pliegue del codo, en el lado radial del tendón del músculo bíceps braquial.",
+      "nombre": "Estanque o charco.",
+      "posicion": 2
+    },
+    "Shaoshang": {
+      "importancia": 1,
+      "indicaciones": "Desmayo causado por el viento, cuadro de embolia cerebral. Vértigo y extenuación. Síncope y desvanecimiento.",
+      "observaciones": "Es el punto Jing-Pozo, elemento madera del canal.",
+      "funcion": "Despeja el calor, favorece a la faringe, salva a la energía exhausta e invertida, reaviva de la languidez. Para la pérdida del conocimiento.",
+      "localizacion": "En el ángulo ungueal radial del dedo pulgar, a 0.1 cun de la raíz de la uña.",
+      "nombre": "Pequeño tendero.",
+      "posicion": 3
+    },
+    "Yuji": {
+      "funcion": "Disipa el viento y lubrica la superficie, lubrica al pulmón, detiene la tos, favorece a la faringe y detiene el dolor.",
+      "localizacion": "Está a la mitad del primer metacarpiano, donde se une la piel roja de la palma con la piel blanca dorsal de la mano.",
+      "nombre": "Vientre de pescado.",
+      "importancia": 2,
+      "indicaciones": "Tos, vómito de sangre, fiebre, dolor de cabeza, cuando el sudor no brota, dolor de laringe.",
+      "observaciones": "Punto Ying-Manantial. Elemento Fuego.",
+      "posicion": 4
+    },
+    "Taiyuan": {
+      "importancia": 4,
+      "indicaciones": "Tos por deficiencia de energía del pulmón, tos con sangre, asma con jadeo, sensación de llenura y dolor en el tórax, faringe y laringe dolorosas y secas.",
+      "observaciones": "Punto Shu-Arroyo. Punto Yuan-Fuente. Elemento Tierra. Es uno de los 8 puntos de influencia, comanda a los vasos sanguíneos. Es el punto madre o tonificante de pulmón.",
+      "funcion": "Aclara y despeja la energía obstruida, estancada y/o invertida del pulmón, lubrica y favorece el funcionamiento de la faringe.",
+      "localizacion": "En el pliegue transversal de la muñeca, en la depresión del lado radial de la arteria radial, en la cara interna del tendón abductor externo del dedo pulgar y borde radial del trapecio.",
+      "nombre": "Abismo profundo",
+      "posicion": 5
+    }
+  },
+  "afuera": {
+    "LUO": "Lieque",
+    "MU": "Zhongfu",
+    "SHU": "Feishu",
+    "XI": "Kongzui"
+  }
+}

@@ -102,6 +102,9 @@ app.on('window-all-closed',(event) => {
           var tmp = await admJSON.readData({name : resp['glosario']});
           if(!tmp['error']){
             await fire.uploadFile('glosario', tmp);
+            console.log('glosario');
+            await fire.uploadFile('config',resp);
+            console.log('config');
             //actualizamos la fecha
             await fire.updateDate(resp['fecha']);
           }

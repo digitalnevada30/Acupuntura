@@ -1,1 +1,62 @@
-{"elementos":{"fuego":["Shaofu"],"agua":["Shaohai"],"metal":["Lingdao"],"tierra":["Shenmen","YUAN","Hijo"],"madera":["Shaochong","Madre"]},"puntos":{"Shenmen":{"importancia":4,"indicaciones":"Dolor precordial, angustia, palpitaciones, mala memoria, insomnio, trastornos mentales maniacos, demencia, dolor costal, hipertensión, epilepsia.","observaciones":"Punto Arroyo, Yuan, Tierra, dispersante.","funcion":"Aclara el corazón, calma el espíritu, regula la energía nutritiva y las emociones, miedo, ira y tristeza.","localizacion":"En el pliegue de la muñeca, en el borde radial del pisiforme.","nombre":"Puerta del espíritu."},"Shaofu":{"nombre":"La vasija pequeña.","importancia":1,"indicaciones":"Palpitaciones, dolor de pecho, contractura y dolor del meñique, misantropía con suspiro y lamentos, prolapso uterino, disuria, enuresis.","observaciones":"Punto Manantial y Fuego.","funcion":"Aclara el corazón, tranquiliza el espíritu, favorece el manejo de humedad.","localizacion":"Entre el cuarto y quinto metacarpiano sobre la palma de la mano, donde indica la punta del meñique al cerrar la mano. Proximal a la articulación metacarpofalángica."},"Shaochong":{"funcion":"Tranquiliza el corazón, calma el espíritu, elimina calor, abre los orificios de la cabeza.","localizacion":"A 0.1 cun del ángulo ungueal radial del dedo meñique.","nombre":"Corriente pequeña.","importancia":1,"indicaciones":"Coma apoplético, inestabilidad de carácter, pereza, sequedad de garganta, palpitaciones, dolor costal y de pecho, ictericia, fiebre, desmayo.","observaciones":"Punto Pozo y Madera. Punto Madre."},"Shaohai":{"funcion":"Aclara el corazón, tranquiliza el espíritu, drena el canal, regula la sangre y la energía.","localizacion":"En la punta del pliegue interno del codo.","nombre":"Mar pequeño.","importancia":1,"indicaciones":"Epilepsia, psicopatías, pérdida de la memoria, precordalgia, temblor de mano, contractura del codo, dolor axilar, entumecimiento de brazo.","observaciones":"Punto He-Mar. Agua"},"Lingdao":{"funcion":"Favorece la función del corazón, lo tranquiliza, calma el espíritu y la voluntad.","localizacion":"Estando la palma hacia arriba, se encuentra a 1.5 cun proximal del pliegue de la muñeca, en el lado radial del tendón del músculo flexor cubital del carpo.","nombre":"Camino del alma.","importancia":1,"indicaciones":"Dolor precordial, convulsiones, afonía súbita, insomnio, miedo, depresión, dolor de codo y brazo, náusea, histeria, prurito, despellejamiento palmar.","observaciones":"Punto Río y Metal del canal."}},"afuera":{"XI":"Yinxi","LUO":"Tongli","MU":"Juque","SHU":"Xinshu"}}
+{
+  "elementos": {
+    "fuego": ["Shaofu"],
+    "agua": ["Shaohai"],
+    "metal": ["Lingdao"],
+    "tierra": ["Shenmen", "YUAN", "Hijo"],
+    "madera": ["Shaochong", "Madre"]
+  },
+  "puntos": {
+    "Shenmen": {
+      "importancia": 4,
+      "indicaciones": "Dolor precordial, angustia, palpitaciones, mala memoria, insomnio, trastornos mentales maniacos, demencia, dolor costal, hipertensión, epilepsia.",
+      "observaciones": "Punto Arroyo, Yuan, Tierra, dispersante.",
+      "funcion": "Aclara el corazón, calma el espíritu, regula la energía nutritiva y las emociones, miedo, ira y tristeza.",
+      "localizacion": "En el pliegue de la muñeca, en el borde radial del pisiforme.",
+      "nombre": "Puerta del espíritu.",
+      "posicion": 1
+    },
+    "Shaofu": {
+      "nombre": "La vasija pequeña.",
+      "importancia": 1,
+      "indicaciones": "Palpitaciones, dolor de pecho, contractura y dolor del meñique, misantropía con suspiro y lamentos, prolapso uterino, disuria, enuresis.",
+      "observaciones": "Punto Manantial y Fuego.",
+      "funcion": "Aclara el corazón, tranquiliza el espíritu, favorece el manejo de humedad.",
+      "localizacion": "Entre el cuarto y quinto metacarpiano sobre la palma de la mano, donde indica la punta del meñique al cerrar la mano. Proximal a la articulación metacarpofalángica.",
+      "posicion": 2
+    },
+    "Shaochong": {
+      "funcion": "Tranquiliza el corazón, calma el espíritu, elimina calor, abre los orificios de la cabeza.",
+      "localizacion": "A 0.1 cun del ángulo ungueal radial del dedo meñique.",
+      "nombre": "Corriente pequeña.",
+      "importancia": 1,
+      "indicaciones": "Coma apoplético, inestabilidad de carácter, pereza, sequedad de garganta, palpitaciones, dolor costal y de pecho, ictericia, fiebre, desmayo.",
+      "observaciones": "Punto Pozo y Madera. Punto Madre.",
+      "posicion": 3
+    },
+    "Shaohai": {
+      "funcion": "Aclara el corazón, tranquiliza el espíritu, drena el canal, regula la sangre y la energía.",
+      "localizacion": "En la punta del pliegue interno del codo.",
+      "nombre": "Mar pequeño.",
+      "importancia": 1,
+      "indicaciones": "Epilepsia, psicopatías, pérdida de la memoria, precordalgia, temblor de mano, contractura del codo, dolor axilar, entumecimiento de brazo.",
+      "observaciones": "Punto He-Mar. Agua",
+      "posicion": 4
+    },
+    "Lingdao": {
+      "funcion": "Favorece la función del corazón, lo tranquiliza, calma el espíritu y la voluntad.",
+      "localizacion": "Estando la palma hacia arriba, se encuentra a 1.5 cun proximal del pliegue de la muñeca, en el lado radial del tendón del músculo flexor cubital del carpo.",
+      "nombre": "Camino del alma.",
+      "importancia": 1,
+      "indicaciones": "Dolor precordial, convulsiones, afonía súbita, insomnio, miedo, depresión, dolor de codo y brazo, náusea, histeria, prurito, despellejamiento palmar.",
+      "observaciones": "Punto Río y Metal del canal.",
+      "posicion": 5
+    }
+  },
+  "afuera": {
+    "XI": "Yinxi",
+    "LUO": "Tongli",
+    "MU": "Juque",
+    "SHU": "Xinshu"
+  }
+}

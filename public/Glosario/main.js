@@ -72,7 +72,7 @@ window.onload = function(){
   const glosarioApp = Vue.component('glosarioApp', {
     data: function(){
       return {
-        nombreGLosario:{},
+        nombreGlosario:{},
         datos: {},
         tituloGlosario: 'Glosario',
         tituloElemento: 'Sin Elemento',
@@ -86,6 +86,11 @@ window.onload = function(){
     methods: {
       obtenerNombreGlosario: async function(){
         this.nombreGlosario = await Modelo.obtenerNombreGlosario();
+        if(this.nombreGlosario['error']){
+          swal('Error', this.nombreGlosario['error'], 'error').then((value)=>{
+            Modelo.regresar();
+          })
+        }
         this.datos = await Modelo.obtenerDatosGlosario(this.nombreGlosario);
         this.setElementos();
       },

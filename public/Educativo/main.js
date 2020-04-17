@@ -41,6 +41,11 @@ window.onload = function(){
     methods:{
       obtenerCanales: async function(){
         this.datos = await Modelo.obtenerCanales();
+        if(this.datos['error']){
+          swal('Error', this.datos['error'], 'error').then((value)=>{
+            Modelo.regresar();
+          })
+        }
         this.ordenarCanales();
       },
       ordenarCanales: function(){
@@ -64,7 +69,7 @@ window.onload = function(){
       abrirGlosario: function(evento){
         Modelo.abrirGlosario();
       },
-      regresar: function(evento){
+      regresar: function(){
         Modelo.regresar();
       }
     },
@@ -104,7 +109,7 @@ window.onload = function(){
     }
   });
 
-  const app = new Vue({
+  const App = new Vue({
     el: '#app-edu',
     components: {
       'educativo-app': eduApp

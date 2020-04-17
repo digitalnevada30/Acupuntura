@@ -1,1 +1,62 @@
-{"elementos":{"fuego":["Rangu"],"madera":["Yongquan","Hijo"],"agua":["Yingu"],"metal":["Fuliu","Madre"],"tierra":["Taixi","YUAN"],"afuera":{"XI":"Shuiquan","LUO":"Dazhong","MU":"Shuiquan","SHU":"Shenshu"}},"puntos":{"Rangu":{"nombre":"Valle bendito.","importancia":1,"indicaciones":"Prurito general, desequilibrio menstrual, espermatorrea, hemoptisis, diarrea, asma, dolor e inflamación de tobillo.","observaciones":"Punto Manantial, elemento Fuego.","funcion":"Nutre la energía Yin y tonifica al riñón, aclara el calor disminuye la humedad, favorece la vejiga.","localizacion":"En la depresión anterior a la tuberosidad del hueso navicular."},"Taixi":{"localizacion":"En el punto medio entre la prominencia del maléolo interno y el tendón del calcáneo.","nombre":"La corriente suprema.","importancia":3,"indicaciones":"Dolor de garganta, dolor de dientes, sordera, hemoptisis, asma, desequilibrio menstrual, insomnio, espermatorrea, impotencia, lumbago, tinnitus.","observaciones":"Punto Arroyo, elemento Tierra, Punto Yuan.","funcion":"Ayuda al riñón y desciende al fuego, moviliza y equilibra a Ren Mai y a Chong Mai (punto extraordinario), aclara al pulmón, nutre el agua del riñón."},"Yongquan":{"importancia":1,"indicaciones":"Insolación, insomnio, lipotimia, epilepsia, convulsiones infantiles por hipertermia, cefalea de tipo parietal, paresia de miembros inferiores, fobias, miedos, mudez.","observaciones":"Punto Pozo, elemento Madera. Punto Hijo dispersante.","funcion":"Abre el orificio del riñón que es el oído, calma el espíritu, dispersa calor, alimenta al riñón.","localizacion":"En la depresión, donde se une el tercio anterior y medio de la planta del pie.","nombre":"La fuente que brota."},"Fuliu":{"localizacion":"A dos cun por encima de la prominencia del maléolo interno. En el borde anterior del tendón del calcáneo.","nombre":"La corriente que retorna.","importancia":2,"indicaciones":"Edema, diarrea, borborigmos, inflamación de la pierna, atrofia del pie, diaforesis nocturna, por deficiencia de yin, en enfermedades calientes y que no hay diaforesis.","observaciones":"Punto Yin-Río, elemento Metal, Punto Madre, tonificante.","funcion":"Nutre el riñón, drena la humedad, tonifica al riñón, nutre y humedece al calentador inferior."},"Yingu":{"funcion":"Equilibra el calentador inferior, aclara o libera la plenitud del calor inferior.","localizacion":"Localización: Entre los dos tendones de los músculos semitendinoso y semimembranoso, en el lado interno de la fosa poplítea.","nombre":"Valle del Yin.","importancia":1,"indicaciones":"Impotencia, hernia, dolor en la cara interna de la rodilla y el muslo.","observaciones":"Es un punto excelente para problemas menstruales. Punto He-Mar, elemento agua del cana."}}}
+{
+  "elementos": {
+    "fuego": ["Rangu"],
+    "madera": ["Yongquan", "Hijo"],
+    "agua": ["Yingu"],
+    "metal": ["Fuliu", "Madre"],
+    "tierra": ["Taixi", "YUAN"],
+    "afuera": {
+      "XI": "Shuiquan",
+      "LUO": "Dazhong",
+      "MU": "Shuiquan",
+      "SHU": "Shenshu"
+    }
+  },
+  "puntos": {
+    "Rangu": {
+      "nombre": "Valle bendito.",
+      "importancia": 1,
+      "indicaciones": "Prurito general, desequilibrio menstrual, espermatorrea, hemoptisis, diarrea, asma, dolor e inflamación de tobillo.",
+      "observaciones": "Punto Manantial, elemento Fuego.",
+      "funcion": "Nutre la energía Yin y tonifica al riñón, aclara el calor disminuye la humedad, favorece la vejiga.",
+      "localizacion": "En la depresión anterior a la tuberosidad del hueso navicular.",
+      "posicion": 1
+    },
+    "Taixi": {
+      "localizacion": "En el punto medio entre la prominencia del maléolo interno y el tendón del calcáneo.",
+      "nombre": "La corriente suprema.",
+      "importancia": 3,
+      "indicaciones": "Dolor de garganta, dolor de dientes, sordera, hemoptisis, asma, desequilibrio menstrual, insomnio, espermatorrea, impotencia, lumbago, tinnitus.",
+      "observaciones": "Punto Arroyo, elemento Tierra, Punto Yuan.",
+      "funcion": "Ayuda al riñón y desciende al fuego, moviliza y equilibra a Ren Mai y a Chong Mai (punto extraordinario), aclara al pulmón, nutre el agua del riñón.",
+      "posicion": 2
+    },
+    "Yongquan": {
+      "importancia": 1,
+      "indicaciones": "Insolación, insomnio, lipotimia, epilepsia, convulsiones infantiles por hipertermia, cefalea de tipo parietal, paresia de miembros inferiores, fobias, miedos, mudez.",
+      "observaciones": "Punto Pozo, elemento Madera. Punto Hijo dispersante.",
+      "funcion": "Abre el orificio del riñón que es el oído, calma el espíritu, dispersa calor, alimenta al riñón.",
+      "localizacion": "En la depresión, donde se une el tercio anterior y medio de la planta del pie.",
+      "nombre": "La fuente que brota.",
+      "posicion": 3
+    },
+    "Fuliu": {
+      "localizacion": "A dos cun por encima de la prominencia del maléolo interno. En el borde anterior del tendón del calcáneo.",
+      "nombre": "La corriente que retorna.",
+      "importancia": 2,
+      "indicaciones": "Edema, diarrea, borborigmos, inflamación de la pierna, atrofia del pie, diaforesis nocturna, por deficiencia de yin, en enfermedades calientes y que no hay diaforesis.",
+      "observaciones": "Punto Yin-Río, elemento Metal, Punto Madre, tonificante.",
+      "funcion": "Nutre el riñón, drena la humedad, tonifica al riñón, nutre y humedece al calentador inferior.",
+      "posicion": 4
+    },
+    "Yingu": {
+      "funcion": "Equilibra el calentador inferior, aclara o libera la plenitud del calor inferior.",
+      "localizacion": "Localización: Entre los dos tendones de los músculos semitendinoso y semimembranoso, en el lado interno de la fosa poplítea.",
+      "nombre": "Valle del Yin.",
+      "importancia": 1,
+      "indicaciones": "Impotencia, hernia, dolor en la cara interna de la rodilla y el muslo.",
+      "observaciones": "Es un punto excelente para problemas menstruales. Punto He-Mar, elemento agua del cana.",
+      "posicion": 5
+    }
+  }
+}

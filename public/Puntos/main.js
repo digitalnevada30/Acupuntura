@@ -253,6 +253,11 @@ window.onload = function(){
     	},
       obtenerGrupos: async function(){
         this.grupos = await Modelo.obtenerGrupos();
+        if(this.grupos['error']){
+          swal('Error', this.grupos['error'], 'error').then((value)=>{
+            Modelo.regresar(this.grupo);
+          })
+        }
         console.log('grupos:');
         console.log(this.grupos);
       }

@@ -67,7 +67,7 @@ window.onload = function(){
       <div class="container">
         <div class="row justify-content-center" style="margin-bottom:30px;">
           <div class="col-md-10">
-            <h2>Seleccionar el módulo evaluativo</h2>
+            <h2>Seleccionar modo a evaluar</h2>
           </div>
         </div>
 
@@ -86,12 +86,12 @@ window.onload = function(){
         <div class="row justify-content-around">
           <div class="col-md-4">
               <div class="row p-1">
-                <button type="button" class="btnMain btn btn-success" id="btnModelo" v-on:click="abrirModelo">Cuerpo humano</button>
+                <button type="button" class="btnMain btn" id="btnModelo" v-on:click="abrirModelo">Cuerpo humano</button>
               </div>
             </div>
             <div class="col-md-4">
               <div class="row p-1">
-                <button type="button" class="btn btn-success btnMain" id="btnJuego" style="margin-bottom:30px;" v-on:click="abrirPuntos">Juego de puntos</button>
+                <button type="button" class="btn btnMain" id="btnJuego" style="margin-bottom:30px;" v-on:click="abrirPuntos">Juego de puntos</button>
               </div>
               <div class="row">
                 <a id="btnRegresar" class=" btn btn-play" style="margin-left:170px;" v-on:click="regresar">

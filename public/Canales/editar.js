@@ -154,7 +154,7 @@ window.onload = function(){
         </div>
         <div class="row">
           <div class="col-md-4">
-            <h4 class="text-light barratitulo">Localización</h4>
+            <h4 class="text-light barratitulo pt-2 pb-2">Localización</h4>
           </div>
           <div class="col-md-8">
             <textarea id="txtLoc" class="editar-textArea" row="10" cols="100" v-model="localizacion"></textarea>
@@ -162,7 +162,7 @@ window.onload = function(){
         </div>
         <div class="row">
           <div class="col-md-4">
-            <h4 class="text-light barratitulo">Función</h4>
+            <h4 class="text-light barratitulo pt-2 pb-2">Función</h4>
           </div>
           <div class="col-md-8">
             <textarea id="txtFun" class="editar-textArea" row="10" cols="100" v-model="funcion"></textarea>
@@ -170,7 +170,7 @@ window.onload = function(){
         </div>
         <div class="row">
           <div class="col-md-4">
-            <h4 class="text-light barratitulo">Indicaciones</h4>
+            <h4 class="text-light barratitulo pt-2 pb-2">Indicaciones</h4>
           </div>
           <div class="col-md-8">
             <textarea id="txtInd" class="editar-textArea" row="10" cols="100" v-model="indicaciones"></textarea>
@@ -178,7 +178,7 @@ window.onload = function(){
         </div>
         <div class="row">
           <div class="col-md-4">
-            <h4 class="text-light barratitulo">Observaciones</h4>
+            <h4 class="text-light barratitulo pt-2 pb-2">Observaciones</h4>
           </div>
           <div class="col-md-8">
             <textarea id="txtObs" class="editar-textArea" row="10" cols="100" v-model="observaciones"></textarea>

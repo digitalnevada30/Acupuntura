@@ -252,14 +252,14 @@ window.onload = function(){
 
             <div class="row justify-content-center mt-3">
               <div class="col-md-8">
-                <h5 style="font-size: 25px;">Punto Número: {{imprimeNumero}}</h5>
+                <h3>Punto número: {{imprimeNumero}}</h3>
               </div>
             </div>
           </div>
           <div class="col-md-7">
             <div class="row">
-              <div class="col-md-9 barratitulo"  style="margin-bottom: 30px;">
-                <h2 class="text-light" id="titulo">{{titulo}}</h2>
+              <div class="col-md-9 barratitulo" style="margin-bottom:30px;">
+                <h2 class="text-light" id="titulo" style="margin-bottom:0px;">{{titulo}}</h2>
               </div>
               <div class="col-md-3 text-center">
                 <a id="edit" class="btn btn-info btn-lg" v-on:click="editar">

@@ -122,6 +122,7 @@ window.onload = function(){
 					console.log(checkDownload);
 					if(!checkDownload){
 						console.log('download have already done');
+						this.habilitar = false;
 						return;
 					}
 

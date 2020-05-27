@@ -68,9 +68,9 @@ window.onload = function(){
 		template: `
 			<div class="container">
 
-				<div class="row justify-content-center" style="margin-bottom:90px; ">
+				<div class="row justify-content-center" style="margin-bottom:30px; ">
 	        <div class="col-md-12">
-	          <h2>Seleccione el Canal</h2>
+	          <h2>Seleccione el canal</h2>
 	        </div>
 	      </div>
 
@@ -78,7 +78,7 @@ window.onload = function(){
 					<div class="col-md-6">
 						<div class="d-flex flex-row flex-wrap justify-content-around  p-2">
 							<div class="pb-2 pt-2" v-for="(v, k) in botones">
-								<button type="button" class="btnCanal btn btn-success" v-on:click="abrirCanal($event, v)">{{datos[v]['nombre']}}</button>
+								<button type="button" class="btnCanal btn" v-on:click="abrirCanal($event, v)">{{datos[v]['nombre']}}</button>
 							</div>
 						</div>
 					</div>

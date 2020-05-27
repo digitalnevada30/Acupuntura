@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 exports.writeData = function(data){
 	return new Promise(resolve => {
@@ -8,7 +9,7 @@ exports.writeData = function(data){
 		console.log('datos en administrador:');
 		//console.log(nombre);
 		//console.log(datos);
-		fs.writeFile("./Informacion/" + nombre, datos, 'utf8', function(err){
+		fs.writeFile(__dirname + path.sep + "Informacion"+ path.sep + nombre, datos, 'utf8', function(err){
 			if(err){
 				console.log('An error occurred while writing JS');
 				resolve({error:"Got an error"});
@@ -31,7 +32,7 @@ exports.writePoint = function(data){
 		var nombre = data['archivo'];
 		var id = data['nombrePunto'];
 		var datos = data['info'];
-		fs.readFile('./Informacion/' + nombre, function(err, data2){
+		fs.readFile(__dirname + path.sep + 'Informacion' + path.sep + nombre, function(err, data2){
 			if(err){
 				console.log('An error occurred while writing JSON 31');
 				console.log(err);
@@ -42,7 +43,7 @@ exports.writePoint = function(data){
 				info['puntos'][id] = datos;
 				//write again
 				info = JSON.stringify(info);
-				fs.writeFile('./Informacion/' + nombre, info, 'utf8', function(err){
+				fs.writeFile(__dirname + path.sep + 'Informacion'+ path.sep + nombre, info, 'utf8', function(err){
 					if(err){
 						console.log('An error occurred while writing JS');
 						resolve({error:"Got an error"});
@@ -60,7 +61,7 @@ exports.writePoint = function(data){
 exports.updateDate = function(data){
 	return new Promise(resolve => {
 		var fecha = data['fecha'];
-		fs.readFile('./Informacion/config.json', function(err, data2){
+		fs.readFile(__dirname + path.sep + 'Informacion'+ path.sep +'config.json', function(err, data2){
 			if(err){
 				console.log('An error occurred while writing JSON 31');
 				console.log(err);
@@ -71,7 +72,7 @@ exports.updateDate = function(data){
 				info['fecha'] = fecha;
 				console.log('fecha despues: ' + info);
 				info = JSON.stringify(info);
-				fs.writeFile('./Informacion/config.json', info, 'utf8', function(err){
+				fs.writeFile(__dirname + path.sep + 'Informacion'+ path.sep +'config.json', info, 'utf8', function(err){
 					if(err){
 						console.log('An error occurred while writing JS');
 						resolve({error:"Got an error"});
@@ -87,10 +88,10 @@ exports.updateDate = function(data){
 
 exports.readData = function(params){
 	return new Promise(resolve => {
-		fs.readFile('./Informacion/' + params['name'], function(err, data){
+		fs.readFile(__dirname + path.sep + 'Informacion'+ path.sep + params['name'], function(err, data){
 			if(err){
 				console.log('An error occurred while writing JS');
-				resolve({error:"Got an error"});
+				resolve({error:err});
 			}else{
 				var datos = JSON.parse(data);
 				resolve(datos);

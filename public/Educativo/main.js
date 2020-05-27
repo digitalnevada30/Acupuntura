@@ -34,7 +34,7 @@ window.onload = function(){
         datos: {},
         botones: [],
         glosario: '',
-        titulo: 'Seleccione el Canal a Estudiar',
+        titulo: 'Seleccione el canal a estudiar',
         tituloGlosario: 'Glosario'
       }
     },

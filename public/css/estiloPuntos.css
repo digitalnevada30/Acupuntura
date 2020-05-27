@@ -1,9 +1,13 @@
+.bg{
+  background: linear-gradient(to left,#D0D3D4,#FBFCFC);
+}
 h4{
   font-family:  "Homer Simpson UI";
-  color: #000000;
-  font-size: 27px;
+  color:#FF5722;
+  font-size: 35px;
   font-weight: bolder;
 }
+
 .elemento{
   border-radius: 50%;
   width: 220px;
@@ -25,40 +29,39 @@ h4{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #FDFDFD;
-  background: #d4d4d4;
+  border: 1px solid #FF5722;
+  background: #F7F9F9;
 }
 
 #fuego{
-  background:linear-gradient(to top, gold,#FF0300);
+  background:linear-gradient(to top, gold,#FF0300, gold,#FF0300);
   /*background: #e30909;*/
 }
 
 #madera{
-  	background:linear-gradient(to top,#924D42,#430C03);
+  	background:linear-gradient(to top,#924D42,#430C03,#924D42,#430C03);
 }
 
 #tierra{
-  	background:linear-gradient(to top,#6CE042,#079C17);
+  	background:linear-gradient(to top,#6CE042,#079C17,#6CE042,#079C17); 
 }
 
 #agua{
-  	background:linear-gradient(to top,#0DDDE3,#1069B4);
+  	background:linear-gradient(to top,#0DDDE3,#1069B4,#0DDDE3,#1069B4);
 }
-
 #metal{
-  	background:linear-gradient(to top,#626567,#F8F9F9 );
+  	background:linear-gradient(to top,#626567,#F8F9F9,#626567,#F8F9F9 );
 }
 
 .divQuestion{
 	width: 80px;
   	height: 28px;
-  	border: 1px solid #ffffff;
+    border: 1px solid #ffffff;
 }
 .divQuestionAfuera{
   width: 80px;
 	height: 28px;
-	border: 1px solid #000000;
+	border: 1px solid #FF5722;
   text-align: center;
 }
 
@@ -69,7 +72,7 @@ h4{
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	background: #000E29;
+	background: linear-gradient(to left, #00796B,#086A87);
 }
 
 .respuesta {

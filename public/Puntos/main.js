@@ -155,7 +155,7 @@ window.onload = function(){
         if(divanswer.childNodes.length !== 0){
     			swal('Error', 'Favor de completar el ejercicio', 'error');
     		}else{
-          let formatoRespuestas = {
+          /*let formatoRespuestas = {
             fecha: Date.now(),
             canal: this.canal,
             fuego: 0,
@@ -166,9 +166,22 @@ window.onload = function(){
             afuera: 0,
             sumaCorrectas: 0,
             total: 0,
-
+          };*/
+          //PART ADDED
+          let formatoRespuestas = {
+            fecha: Date.now(),
+            canal: this.canal,
+            fuego: [0,0],
+            tierra: [0,0],
+            metal: [0,0],
+            agua: [0,0],
+            madera: [0,0],
+            afuera: [0,0],
+            sumaCorrectas: 0,
+            total: 0,
           };
-
+          //PART ADDED
+          formatoRespuestas['afuera'][1] = Object.keys(this.puntoAfuera).length;
           formatoRespuestas['total'] = Object.keys(this.puntoAfuera).length;
           console.log('----- Evaluando ------');
           console.log(formatoRespuestas);
@@ -179,6 +192,8 @@ window.onload = function(){
     			for(let el in this.elementos){
     				console.log('canal: ' + el);
             console.log('tamEL: ' + document.getElementById(el).childNodes.length);
+            //PART ADDED
+            formatoRespuestas[el][1] = document.getElementById(el).childNodes.length;
             formatoRespuestas['total'] += document.getElementById(el).childNodes.length;
     				for(let i=0 ; i < document.getElementById(el).childNodes.length ; i++){
     					//resp: document.getElementById(el + i).childNodes[0].innerHTML
@@ -187,7 +202,8 @@ window.onload = function(){
                 //agregar sumaCorrectas
                 formatoRespuestas['sumaCorrectas'] += 1;
                 //agregar elemento
-                formatoRespuestas[el] += 1;
+                //PART ADDED
+                formatoRespuestas[el][0] += 1;
     						console.log('Correcta: ' + el + ' - ' + nombre);
     						respCorrectas++;
     					}
@@ -199,10 +215,12 @@ window.onload = function(){
             let id = 'afuera' + elem;
             let nombre = document.getElementById(id).childNodes[0].innerHTML;
             if(nombre == this.puntoAfuera[elem]){
-              formatoRespuestas['afuera'] += 1;
+              formatoRespuestas['sumaCorrectas'] += 1;
+              formatoRespuestas['afuera'][0] += 1;
               respCorrectas++;
             }
           }
+          console.log(formatoRespuestas);
           //guardamos los resultados
           //obtenemos el grupo
           let reportes = await Modelo.obtenerReportes();
@@ -351,7 +369,7 @@ window.onload = function(){
           </div>
 
           <div class="row justify-content-around">
-            <div class="col-md-4">
+            <div class="col-md-1">
               <div id="agua" class="elemento" >
                 <div v-for="(elem, index) in elementos['agua']" :id="'agua'+index" class="divQuestion" v-on:drop="drop($event)" v-on:dragover="allowDrop($event)"></div>
               </div>
@@ -375,7 +393,7 @@ window.onload = function(){
         <div class="col-md-4">
           <div class="row">
             <div class="col-md-12">
-              <h3 id="titulo" class="text-center">{{informacionCanal['titulo']}}</h3>
+              <h4 id="titulo" class="text-center">{{informacionCanal['titulo']}}</h4>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -394,6 +412,7 @@ window.onload = function(){
               <a id="btnEval" class="btn btn-play" v-on:click="evaluar">
                   <img src="../images/evaluar.png" width="55" height="55">
               </a>
+              <h5>  Evaluar</h5>
             </div>
           </div>
         </div>

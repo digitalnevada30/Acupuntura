@@ -1,5 +1,5 @@
 // Modules
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu, MenuItem} = require('electron')
 
 const internetAvailable = require('internet-available');
 
@@ -37,6 +37,27 @@ express.init();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let mainMenu = Menu.buildFromTemplate([
+  {
+    label:'Aplicación',
+    submenu: [
+      {
+        label: 'Recargar',
+        click: () => {app.relaunch();app.exit(0)},
+        accelerator: 'CommandOrControl+R'
+      },
+      {
+        label: 'Cerrar',
+        click: () => {app.quit()},
+        accelerator: 'CommandOrControl+Q'
+      },
+      {
+        label: 'Pantalla completa',
+        role: 'toggleFullScreen'
+      }
+    ]
+  }
+])
 
 // Create a new BrowserWindow when `app` is ready
 function createWindow () {
@@ -56,7 +77,10 @@ function createWindow () {
   //mainWindow.loadURL('http://127.0.0.1:3000/Prototipo?name=higado')
 
   // Open DevTools - Remove for PRODUCTION!
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
+
+  //establecemos el menu
+  Menu.setApplicationMenu(mainMenu)
 
   // Listen for window being closed
   mainWindow.on('closed',  () => {
@@ -71,7 +95,9 @@ app.on('ready', createWindow)
 app.on('window-all-closed',(event) => {
   if (process.platform !== 'darwin'){
     event.preventDefault()
+    console.log('evaluando actualizaciones')
     internetAvailable().then(async function(){
+      console.log('ENTRANDO!!!!')
       if(Update){
         console.log('actualizando Canales');
         var resp = await admJSON.readData({name : 'config.json'});

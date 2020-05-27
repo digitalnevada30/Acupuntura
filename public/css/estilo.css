@@ -5,31 +5,261 @@
 	padding: 25px;
 	font-weight: 600;
 	font-size: 45px;
-	color: #ffffff;
-	background-color: #000E29; /*1A5276  002E4C*/
-	border-radius: 6px;
-	border: 2px solid #000E29;
+	color:#F7F9F9;
+	background-color: #FF5722; /*1A5276  002E4C*/
+	border-radius: 10px;
+	border: 3px solid #F7F9F9;
 	text-align: center;
 }
 
-.bg{
-	background-color:#FBFCFC;
-}
 .btnMain:hover{
-    color: #000E29;
-    background-color: #D5D8DC;
-    border: 2px solid #000E29;
+    color: #FF5722;
+    background-color: #F7F9F9;
+    border: 2px solid #FF5722;
+}
+.bgmain{
+	background: linear-gradient(to left, #00796B,#086A87);
+}
+.bg{
+	background: linear-gradient(to left,#DBDBDB,#FBFCFC,#DBDBDB );
+}
+
+.btnJ{
+	text-decoration: none;
+	font-family:"Optima";
+	padding: 25px;
+	font-weight: 600;
+	font-size: 45px;
+	color:#F7F9F9;
+	background: linear-gradient(to left, #00796B,#086A87);
+	border-radius: 10px;
+	border: 3px solid #F7F9F9;
+	text-align: center;
+}
+.btnJ:hover{
+    color:  #F7F9F9;
+  	background:#FF5722 !important;
+    border: 2px solid #FF5722;
 }
 .select{
 	font-family:"Optima";
 	font-size: 20px;
+	background: #ffffff;
+	border: 2px solid #FF5722;
 }
 
 .barratitulo{
-	background-color: #000E29;
+	background: linear-gradient(to left, #00796B,#086A87);
 	text-align: center;
 	margin-bottom:30px;
 }
+
+/*educativo*/
+.educativo-canal{
+	height: 400px;
+	padding: 5px;
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+/*editar*/
+.editar-textArea{
+	height: 90px;
+}
+
+
+/*canales*/
+.canal-scroll-puntos{
+	height: 380px;
+	margin-bottom: 5px;
+	padding-top: 15px;
+	text-align: justify;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#titulo{
+	text-align: left;
+}
+
+.btnCanal {
+	text-decoration: none;
+	font-family:"Optima";
+	width: 200px;
+	padding: 5px;
+	font-weight: 90;
+	font-size: 20px;
+	color: #F7F9F9;
+	background: linear-gradient(to left, #00796B,#086A87);
+	border-radius: 6px;
+	border: 2px solid #F7F9F9;
+	text-align: center;
+
+}
+.btnCanal:hover{
+	color:  #F7F9F9;
+  	background:#FF5722 !important;
+    border: 2px solid #FF5722;
+}
+
+h1{
+	font-family:  "Homer Simpson UI";
+	color: #F7F9F9;
+	font-size: 85px;
+	font-weight: bolder;
+	margin-bottom: 100px;
+	margin-left: 325px;
+}
+
+h2{
+	font-family:  "Homer Simpson UI";
+	color:#FF5722/*#1A5276*/;
+	font-size: 50px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+h3{
+	font-family:  "Homer Simpson UI";
+	color: #023949;
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+h4{
+	font-family:  "Homer Simpson UI";
+	color: #ffffff;
+	font-size: 27px;
+	font-weight: bolder;
+}
+
+h6{
+	font-family:  "Homer Simpson UI";
+	color: #023949;
+	font-size: 25px;
+	font-weight: bolder;
+}
+
+/*Estilos del glosario*/
+.search-icon{
+    background: url("../images/search.png");
+    width: 32px;
+    height: 32px;
+    display: block;
+ }
+
+.barraicono{
+	background: linear-gradient(to left, #00796B,#086A87);
+	border-radius: 25px;
+	width: 260px;
+
+}
+
+.scroll-info{
+    width: 800px;
+    height: 400px;
+    padding: 5px;
+    margin-bottom: 30px;
+    background: white;
+    text-align: justify;
+   overflow-y: scroll;
+ }
+ .btnNC{
+    height: 40px;
+    margin-bottom: 15px;
+    background:#00796B;
+    border:2px solid #00796B;
+	font-size: 19px;
+	color:#F7F9F9;
+	font-family:"Optima";
+ }
+ .btnNC:hover{
+	color:#F7F9F9;
+    background-color: #00796B;
+    border: 3px solid #FF5722;
+}
+.btnConcepto{
+	background: #086A87;
+	font-size: 19px;
+	color: #F7F9F9;
+	font-family:"Optima";
+}
+.btnConcepto:hover{
+	color: #F7F9F9;
+    background-color: #FF5722;
+    border: 3px solid #FFffff;
+}
+
+.glosarioBtnConcepto{
+	flex: 1 0 0px;
+}
+
+ #elementos{
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: space-around;
+	 align-items: center;
+	 align-content: flex-start;
+   height: 500px;
+   overflow-y: scroll;
+
+ }
+ #elementos div{
+ 	width: 150px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-self: stretch;
+	margin-top: 5px;
+	margin-bottom: 5px;
+ }
+
+ #elementos button{
+ 	width: 150px;
+	height: 100%;
+ }
+
+
+#buscador{
+    margin-right: 3px;
+ }
+
+#txt-form-def{
+    width: 500px;
+    height: 200px;
+    text-align: justify;
+    overflow-y: scroll;
+    resize: none;
+    border: 2px solid  #FF5722;
+ }
+
+#txt-form-nombre{
+    width: 300px;
+    border: 2px solid  #FF5722;
+ }
+
+#formulario{
+    display: none;
+ }
+.contenedor{
+    width: 600px;
+    height: 500px;
+    background: linear-gradient(to left,#D0D3D4,#FBFCFC,#D0D3D4);
+    display: block;
+ }
+.fondo-formulario{
+    height: 700px;
+    background:#086A87;
+ }
+.number{
+	width:100px;
+	height: 30px;
+}
+
+.fondo{
+	background: linear-gradient(to left, #00796B,#086A87);
+}
+
 
 /*Juego Modelo*/
 .input-modelo-correcto{
@@ -41,17 +271,17 @@
 .input-modelo{
 	width:50px;
 	height: 30px;
-	border: 3px solid #000;
+	border: 2px solid #00796B;
 	border-radius: 50px;
 	text-align: right;
 }
 .elemento-modelo-pregunta{
 	width: 200px;
 	height: 50px;
-	border: 3px solid;
-	background: #2e042e;
-	border-color: #30fcff;
-	color: white;
+	border: 2px solid;
+	background: #FF5722;
+	border-color: #F7F9F9;
+	color: #F7F9F9;
 	padding: 2px 0px 2px 10px;
 	margin: 10px 10px 10px 10px;
 
@@ -62,14 +292,13 @@
 }
 .canal-scroll-modelo{
 	width: 100%;
-	height: 530px;
+	height: 500px;
 	margin-bottom: 5px;
 	padding-top: 15px;
 	text-align: justify;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	background: #e9ecef;
-
+	background: linear-gradient(to left, #00796B,#086A87);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -102,182 +331,4 @@
 #titulo{
 	margin-bottom: 30px;
 	text-align: left;
-}
-
-.btnCanal {
-	text-decoration: none;
-	font-family:"Optima";
-	width: 200px;
-	padding: 5px;
-	font-weight: 90;
-	font-size: 20px;
-	color: #ffffff;
-	background-color: #000E29;
-	border-radius: 6px;
-	border: 2px solid #000E29;
-	text-align: center;
-
-}
-.btnCanal:hover{
-	color: #000E29;
-    background-color: #D5D8DC;
-    border: 2px solid #000E29;
-}
-
-h1{
-	font-family:  "Homer Simpson UI";
-	color: #000E29;
-	font-size: 85px;
-	font-weight: bolder;
-	margin-bottom: 100px;
-	margin-left: 325px;
-}
-
-h2{
-	font-family:  "Homer Simpson UI";
-	color: #000E29;
-	font-size: 50px;
-	font-weight: bolder;
-	text-align: center;
-}
-
-h3{
-	font-family:  "Homer Simpson UI";
-	color: #000000;
-	font-size: 30px;
-	font-weight: bolder;
-}
-
-h4{
-	font-family:  "Homer Simpson UI";
-	color: #ffffff;
-	font-size: 27px;
-	font-weight: bolder;
-}
-
-h6{
-	font-family:  "Homer Simpson UI";
-	color: #000000;
-	font-size: 25px;
-	font-weight: bolder;
-}
-
-body{
-	background-color:#FBFCFC;
-	/*#f3f1ef*/
-}
-
-
-/*Estilos del glosario*/
-.search-icon{
-    background: url("../images/search.png");
-    width: 32px;
-    height: 32px;
-    display: block;
- }
-
-.barraicono{
-	background-color:#000E29;
-	border-radius: 25px;
-	width: 260px;
-
-}
-
-.scroll-info{
-    width: 800px;
-    height: 400px;
-    padding: 5px;
-    margin-bottom: 15px;
-    background: #cdd0d4;
-    text-align: justify;
-   overflow-y: scroll;
- }
- .btnNC{
-    height: 40px;
-    margin-bottom: 15px;
-    background:#F4511E;
-    border:2px solid #F4511E;
-	font-size: 19px;
-	color: white;
-	font-family:"Optima";
- }
- .btnNC:hover{
-	color: #ffffff;
-    background-color: #AB2F09;
-    border: 2px solid #AB2F09;
-}
-
- #elementos{
-    height: 500px;
-    overflow-y: scroll;
-
- }
-
- #elementos button{
- 	width: 150px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
- }
-#buscador{
-    margin-right: 3px;
- }
-
-#txt-form-def{
-    width: 500px;
-    height: 200px;
-    text-align: justify;
-    overflow-y: scroll;
-    resize: none;
- }
-
-#txt-form-nombre{
-    width: 300px;
- }
-
-#formulario{
-    display: none;
- }
-.contenedor{
-    width: 600px;
-    height: 500px;
-    background: #E5E7E9;
-    display: block;
- }
-.fondo-formulario{
-    height: 700px;
- }
-
-
-
-/* Estilos de separación*/
-.mt{
-	margin-top: 20px;
-}
-
-.mb{
-	margin-bottom:90px;
-}
-.mb65{
-	margin-bottom:65px;
-}
-.mb85{
-	margin-bottom:85px;
-}
-.mb30{
-	margin-bottom:230px;
-}
-.mb20{
-	margin-bottom:20px;
-}
-.ml{
-	margin-left:250px;
-}
-.ml170{
-	margin-left:170px;
-}
-.number{
-	width:100px;
-	height: 30px;
 }

@@ -1,9 +1,9 @@
 var admin = require("firebase-admin");
-var serviceAccount = require("./acupuntura-7e1bb-firebase-adminsdk-wkoc0-fdddd57b53.json");
+var serviceAccount = require("./acupuntura-7951d-firebase-adminsdk-2897j-dfa64616f7.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://acupuntura-7e1bb.firebaseio.com"
+    databaseURL: "https://acupuntura-7951d.firebaseio.com"
   });
 
 const db = admin.firestore();

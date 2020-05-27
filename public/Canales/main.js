@@ -47,6 +47,8 @@ window.onload = function(){
         puntoSeleccionado: '-',
         audio: null,
         presionado: false,
+        inicioW: 0,
+        inicioH: 0,
         startX: 0,
         startY: 0,
         scrollLeft: 0,
@@ -95,25 +97,25 @@ window.onload = function(){
         this.divModelo.scrollTop = this.scrollVert - walkY;
       },
       zoomAdd: function(){
-        this.imagen. width += 50;
-        this.imagen. height += 50;
+        this.imagen. width += 70;
+        this.imagen. height += 70;
       },
       zoomRem: function(){
-        if((this.imagen.width-50) < this.divModelo.clientWidth) return;
-        this.imagen. width -= 50;
-        this.imagen. height -= 50;
+        if((this.imagen.width-70) < this.divModelo.clientWidth) return;
+        this.imagen. width -= 70;
+        this.imagen. height -= 70;
       },
       zoomRes: function(){
-        if(this.imagen.naturalWidth < this.divModelo.clientWidth){
-          let desplazamiento = this.divModelo.clientWidth - this.imagen.naturalWidth;
-          this.imagen.width = this.imagen.naturalWidth + desplazamiento;
-          this.imagen.height = this.imagen.naturalHeight + desplazamiento;
-          return;
+        this.imagen.width = this.inicioW;
+        this.imagen.height = this.inicioH;
+      },
+      cambio: function(){
+        if(this.imagen != null){
+          if(this.imagen.width === 0 || this.imagen.height===0)return;
+          this.inicioW = this.imagen.width;
+          this.inicioH = this.imagen.height;
         }
-        this.imagen.width = this.imagen.naturalWidth;
-        this.imagen.height = this.imagen.naturalHeight;
       }
-
     },
     computed:{
       imprimeNumero: function(){
@@ -187,7 +189,7 @@ window.onload = function(){
         }
       },
       setImagen: function(){
-        return '../images/Modelos/' + this.canal + '.jpeg';
+        return '../images/Modelos/' + this.canal + '.svg';
       }
     },
     created: async function(){
@@ -226,8 +228,8 @@ window.onload = function(){
           <div class="col-md-5">
             <div class="row">
               <div class="col-md-12">
-                <div id="modelo" style="width:100%; height:530px; background:blue; position: relative; white-space: nowrap; transition: all 0.2s; transform: scale(0.98); will-change: transform; user-select: none;cursor: pointer; overflow-y: scroll; overflow-x: scroll;" v-on:mousedown="presionarImagen($event)" v-on:mouseup="soltarImagen($event)" v-on:mousemove="moverImagen($event)">
-                  <img id="imagen" v-bind:src="setImagen" width="100%" draggable="false">
+                <div id="modelo" style="width:100%; height:530px; background:#FF5722 ; border: 4px solid #FF5722; position: relative; white-space: nowrap; transition: all 0.2s; transform: scale(0.98); will-change: transform; user-select: none;cursor: pointer; overflow-y: scroll; overflow-x: scroll;" v-on:mousedown="presionarImagen($event)" v-on:mouseup="soltarImagen($event)" v-on:mousemove="moverImagen($event)">
+                  <img id="imagen" v-bind:change="cambio()" v-bind:src="setImagen" width="100%" draggable="false">
                 </div>
               </div>
             </div>
@@ -270,7 +272,7 @@ window.onload = function(){
             </div>
             <div class="row">
               <select class="select" id="selPuntos" v-model="puntoSeleccionado">
-                <option v-for="elemento in puntos" v-bind:value="elemento.valor">{{elemento.nombre}}</option>
+                <option v-for="elemento in puntos" v-bind:value="elemento.valor">{{elemento.nombre.replace(/_/g,' ')}}</option>
               </select>
                 <a id="btnplay" class="btn btn-play" v-on:click="reproducir">
                   <img src="../images/altavoz.png" width="35" height="35">

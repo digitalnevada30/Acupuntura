@@ -78,7 +78,6 @@ window.onload = function(){
         tituloElemento: 'Sin Elemento',
         buscador: '',
         elementos: [],
-
         txtInformacion: '',
         mostrar: true
       }
@@ -126,7 +125,8 @@ window.onload = function(){
       },
       mostrarFormato: function(){
         //cambiamos background
-        $('body').css('background', '#ffffff');
+        $('body').css('background', '');
+        $('body').addClass('bg');
         //mostrar elemento
         $('#principal').fadeToggle();
       },
@@ -220,11 +220,11 @@ window.onload = function(){
     template: `
       <div class="container" id="principal">
         <div class="row justify-content-center">
-          <div class="col-md-7">
+          <div class="col-md-8">
             <!-- element segment -->
             <!-- titulo -->
             <div class="row">
-              <div class="col-md-12 text-center">
+              <div class="col-md-12 text-center"  style="margin-bottom: 20px;">
                 <h2>{{tituloGlosario}}</h2>
               </div>
             </div>
@@ -240,16 +240,17 @@ window.onload = function(){
             </div>
             <!-- elementos -->
             <div class="row" style="margin-top: 20px;">
-              <div class="col-md-11 d-flex flex-wrap justify-content-around align-content-start" id="elementos">
-                <div v-for="obj in listaFiltrada">
-                  <button v-bind:id="obj.id" class="btn btn-info btnConcepto" v-on:click="cargarInformacion(obj.id)">{{obj.id}}</button>
+              <!--<div class="col-md-11 d-flex flex-wrap justify-content-around align-content-start" id="elementos">-->
+              <div class="col-md-11" id="elementos">
+                <div v-for="obj in listaFiltrada" class="bg-success">
+                  <button v-bind:id="obj.id" class="btn btnConcepto" v-on:click="cargarInformacion(obj.id)">{{obj.id}}</button>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class="col-md-5">
+          <div class="col-md-4">
             <!-- show information -->
             <!-- titulo -->
             <div class="row">
@@ -258,7 +259,7 @@ window.onload = function(){
               </div>
             </div>
             <!-- information -->
-            <div class="row">
+            <div class="row" >
               <div class="scroll-info" id="txt-info">
                 <p v-html="txtInformacion"></p>
               </div>
@@ -328,8 +329,7 @@ window.onload = function(){
 
       this.$root.$on('cambiarVistaF', (id, def, tipo) => {
         //cambiamos background
-        $('body').css('background', '#000e29');
-        //050429
+        $('body').css('background', '#086A87');
         //mostrar elemento
         $('#formulario').fadeToggle();
         //limpiamos datos
@@ -367,7 +367,7 @@ window.onload = function(){
 
             <div class="row justify-content-center">
               <div class="col-md-12 text-center">
-                <h3>Nombre del Concepto</h3>
+                <h3>Nombre del concepto</h3>
               </div>
             </div>
 

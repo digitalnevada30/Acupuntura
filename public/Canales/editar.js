@@ -82,7 +82,8 @@ window.onload = function(){
         funcion: '',
         indicaciones: '',
         observaciones: '',
-        importancia: 1
+        importancia: 1,
+        tituloGuardar:'Guardar'
       };
     },
     created: async function(){
@@ -119,7 +120,7 @@ window.onload = function(){
         this.informacionPunto['funcion'] = this.funcion.replace(/\n/g, '<br>');
         this.informacionPunto['indicaciones'] = this.indicaciones.replace(/\n/g, '<br>');
         this.informacionPunto['observaciones'] = this.observaciones.replace(/\n/g, '<br>');
-        this.informacionPunto['importancia'] = this.importancia;
+        this.informacionPunto['importancia'] = parseInt(this.importancia);
         let resp = await Modelo.actualizaPunto(this.datos['archivo'], this.punto, this.informacionPunto);
         if(resp['error']){
           swal('Error', resp['error'], 'error');
@@ -148,8 +149,8 @@ window.onload = function(){
     template: `
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <h2 id="titulo">{{punto}}</h2>
+          <div class="col-md-12" style="margin-bottom:20px;">
+            <h2 id="titulo">{{punto.replace(/_/g,' ')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -204,11 +205,13 @@ window.onload = function(){
             <a class="btn" v-on:click="regresar">
               <img src="../images/regre.png" width="55" height="55">
             </a>
-          </div>
+          </div >
           <div class="col-md-2">
             <a class="btn" v-on:click="guardar">
               <img src="../images/save.png" width="55" height="55">
             </a>
+            <h5>{{tituloGuardar}}</h5>
+           </div >
           </div>
         </div>
       </div>

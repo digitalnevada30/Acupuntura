@@ -217,6 +217,10 @@ window.onload = function(){
         //deshabilitar boton
         this.eval=false;
         $('#imagen-evaluar').css('opacity', 0.5);
+      },
+      objetivo: function(){
+        swal('Instrucciones', `Este juego tiene como objetivo que el alumno relacione el nombre del punto acupuntural con número correspondiente al canal.\n
+        Se debe escribir el número el punto acupuntural correspondiente con su nombre.`, 'info');
       }
     },
     computed:{
@@ -325,6 +329,13 @@ window.onload = function(){
                   <img id="imagen-evaluar" src="../images/evaluar.png" width="55" height="55">
               </a>
               <h5> Evaluar</h5>
+            </div>
+
+            <div class="col-md-3 text-center">
+              <a class="btn btn-play" v-on:click="objetivo">
+                <img src="../images/question.png" width="55" height="55">
+              </a>
+              <h5>Nota</h5>
             </div>
           </div>
 

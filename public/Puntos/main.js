@@ -278,6 +278,11 @@ window.onload = function(){
         }
         console.log('grupos:');
         console.log(this.grupos);
+      },
+      objetivo: function(){
+        swal('Instrucciones', `Este juego tiene como objetivo que el alumno relacione los puntos elemento del canal, al igual que su flujo de energía \n
+        Cada circulo corresponde a un elemento\n
+        Se debe seleccionar un concepto y arrastrarlo hasta los circulos o en el recuadro y soltarlo`, 'info');
       }
     },
     created: async function(){
@@ -414,6 +419,14 @@ window.onload = function(){
               </a>
               <h5>  Evaluar</h5>
             </div>
+
+            <div class="col-md-3 text-center">
+              <a class="btn btn-play" v-on:click="objetivo">
+                <img src="../images/question.png" width="55" height="55">
+              </a>
+              <h5>Nota</h5>
+            </div>
+
           </div>
         </div>
 
